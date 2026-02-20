@@ -575,8 +575,8 @@ const StatusBar = () => (
 // ─── Bottom Nav ────────────────────────────────────────────────────────────────
 const BottomNav = ({ active, onChange }) => {
   const tabs = [
-    { id: "panel", icon: "dashboard", label: "Home" },
-    { id: "fermentacion", icon: "inventory_2", label: "Process" },
+    { id: "panel", icon: "dashboard", label: "Inicio" },
+    { id: "fermentacion", icon: "inventory_2", label: "Proceso" },
     { id: "inventario", icon: "analytics", label: "Almacén" },
     { id: "registro", icon: "agriculture", label: "Registro" },
   ];
@@ -670,10 +670,19 @@ const Panel = ({ navigate }) => {
 
 // ─── FERMENTACION ─────────────────────────────────────────────────────────────
 const Fermentacion = ({ goBack }) => {
-  const today = 4;
   const total = 7;
-  const [turns, setTurns] = useState(3);
-  const progressPct = ((today - 1) / (total - 1)) * 100;
+  const maxTurns = 6;
+  const [selectedDay, setSelectedDay] = useState(1);
+  const [turns, setTurns] = useState(0);
+  const [lastTurn, setLastTurn] = useState(null);
+  const progressPct = ((selectedDay - 1) / (total - 1)) * 100;
+
+  const handleRegisterTurn = () => {
+    if (turns < maxTurns) {
+      setTurns(t => t + 1);
+      setLastTurn(new Date().toLocaleTimeString("es-CO", { hour: "2-digit", minute: "2-digit" }));
+    }
+  };
 
   return (
     <div className="page-enter" style={{ display: "flex", flexDirection: "column", flex: 1, overflow: "hidden" }}>
@@ -681,19 +690,19 @@ const Fermentacion = ({ goBack }) => {
       <div className="page-header px">
         <button className="header-icon-btn" onClick={goBack}><Icon name="arrow_back_ios" /></button>
         <div style={{textAlign:"center"}}>
-          <div className="page-title">Fermentacion</div>
+          <div className="page-title">Fermentación</div>
           <div className="lot-label">Lote #URB-2023-084</div>
         </div>
         <button className="header-icon-btn"><Icon name="more_horiz" /></button>
       </div>
 
       <div className="page-scroll px">
-        {/* Timeline */}
+        {/* Timeline — días seleccionables */}
         <div className="mb-6">
           <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:16}}>
             <div style={{fontWeight:700,fontSize:15}}>Proceso</div>
             <div style={{background:"var(--primary-light)",color:"var(--primary)",padding:"4px 12px",borderRadius:999,fontSize:11,fontWeight:700}}>
-              Dia {today} de {total}
+              Día {selectedDay} de {total}
             </div>
           </div>
           <div className="timeline-wrap">
@@ -701,10 +710,10 @@ const Fermentacion = ({ goBack }) => {
             <div className="timeline-progress" style={{width:`${progressPct}%`}} />
             {Array.from({length: total}, (_,i) => {
               const d = i + 1;
-              const done = d < today;
-              const current = d === today;
+              const done = d < selectedDay;
+              const current = d === selectedDay;
               return (
-                <div className="day-node" key={d}>
+                <div className="day-node" key={d} onClick={() => setSelectedDay(d)} style={{cursor:"pointer"}}>
                   <div className={`day-circle${done?" done":""}${current?" current":""}`}>
                     {done ? <Icon name="check" style={{fontSize:14,color:"white"}} /> : d}
                   </div>
@@ -712,6 +721,9 @@ const Fermentacion = ({ goBack }) => {
                 </div>
               );
             })}
+          </div>
+          <div style={{marginTop:10,fontSize:11,color:"var(--muted)",textAlign:"center"}}>
+            Toca un día para seleccionarlo
           </div>
         </div>
 
@@ -723,7 +735,6 @@ const Fermentacion = ({ goBack }) => {
               <path d="M 10 90 A 80 80 0 0 1 170 90" fill="none" stroke="#ede9e4" strokeWidth="14" strokeLinecap="round"/>
               <path d="M 10 90 A 80 80 0 0 1 170 90" fill="none" stroke="var(--primary)" strokeWidth="14" strokeLinecap="round"
                 strokeDasharray="219.9" strokeDashoffset="60"/>
-              {/* needle */}
               <line x1="90" y1="90" x2="90" y2="18" stroke="#1a1208" strokeWidth="3" strokeLinecap="round"
                 transform="rotate(40, 90, 90)"/>
               <circle cx="90" cy="90" r="7" fill="#1a1208"/>
@@ -739,12 +750,12 @@ const Fermentacion = ({ goBack }) => {
         <div className="info-grid mb-6">
           <div className="info-card">
             <div className="info-card-label"><Icon name="calendar_today" style={{fontSize:14}} /> Fecha inicio</div>
-            <div className="info-card-value">Feb 20, 2026</div>
+            <div className="info-card-value">{new Date().toLocaleDateString("es-CO",{day:"numeric",month:"short",year:"numeric"})}</div>
           </div>
           <div className="info-card">
             <div className="info-card-label"><Icon name="cached" style={{fontSize:14}} /> Vueltas realizadas</div>
             <div className="info-card-value">
-              {turns} <span className="info-card-sub">de 06 total</span>
+              {turns} <span className="info-card-sub">de {maxTurns} total</span>
             </div>
           </div>
         </div>
@@ -762,9 +773,18 @@ const Fermentacion = ({ goBack }) => {
             <div className="action-icon"><Icon name="refresh" /></div>
             <div className="action-info">
               <div className="action-name">Volteo (giro)</div>
-              <div className="action-sub">Último turno registrado hace 4 h</div>
+              <div className="action-sub">
+                {lastTurn ? `Último giro registrado a las ${lastTurn}` : "Sin giros registrados aún"}
+              </div>
             </div>
-            <button className="action-btn" onClick={() => setTurns(t => Math.min(t+1,6))}>Registrar giro</button>
+            <button
+              className="action-btn"
+              onClick={handleRegisterTurn}
+              style={{opacity: turns >= maxTurns ? 0.5 : 1, cursor: turns >= maxTurns ? "not-allowed" : "pointer"}}
+              disabled={turns >= maxTurns}
+            >
+              {turns >= maxTurns ? "Completado" : "Registrar giro"}
+            </button>
           </div>
           <div className="action-card muted">
             <div className="action-icon"><Icon name="thermostat" /></div>
@@ -774,6 +794,16 @@ const Fermentacion = ({ goBack }) => {
             </div>
             <button className="action-btn-text">Manual</button>
           </div>
+        </div>
+
+        {/* Reset */}
+        <div style={{textAlign:"center",marginTop:20,marginBottom:8}}>
+          <button
+            onClick={() => { setSelectedDay(1); setTurns(0); setLastTurn(null); }}
+            style={{background:"none",border:"1.5px solid var(--border)",borderRadius:"var(--radius-sm)",padding:"8px 20px",fontSize:12,fontWeight:700,color:"var(--muted)",cursor:"pointer",fontFamily:"inherit"}}
+          >
+            <Icon name="restart_alt" style={{fontSize:14,marginRight:4}} /> Reiniciar proceso
+          </button>
         </div>
         <div style={{height:20}}/>
       </div>
