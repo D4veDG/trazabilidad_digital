@@ -558,6 +558,127 @@ const IonicStyles = () => (
     }
 
     .material-icons { font-family: 'Material Icons'; font-style: normal; font-size: 20px; display: inline-block; vertical-align: middle; line-height: 1; }
+
+    /* ─── MODAL VARIEDAD ─────────────────────────── */
+    .modal-backdrop {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.45);
+      z-index: 200; display: flex; align-items: flex-end; justify-content: center;
+    }
+    .modal-sheet {
+      background: white; border-radius: 24px 24px 0 0;
+      padding: 0 20px 40px; width: 100%; max-width: 430px;
+      animation: slideUp 0.28s ease;
+      max-height: 92dvh; overflow-y: auto;
+    }
+    .modal-sheet::-webkit-scrollbar { display: none; }
+    @keyframes slideUp {
+      from { transform: translateY(100%); }
+      to   { transform: translateY(0); }
+    }
+    .modal-handle {
+      width: 40px; height: 4px; background: #e5e5e5;
+      border-radius: 999px; margin: 14px auto 18px;
+    }
+    .modal-title { font-size: 18px; font-weight: 800; margin-bottom: 22px; text-align: center; }
+
+    /* ─── PARCELAS ─────────────────────────────── */
+    .parcel-card {
+      background: white; border: 1.5px solid var(--border);
+      border-radius: var(--radius); padding: 16px 18px;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .parcel-icon {
+      width: 46px; height: 46px; border-radius: 14px;
+      background: var(--primary-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; flex-shrink: 0;
+    }
+    .parcel-info { flex: 1; min-width: 0; }
+    .parcel-name { font-size: 15px; font-weight: 800; }
+    .parcel-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+    .parcel-chip {
+      background: #f3f0ed; border-radius: 8px;
+      padding: 3px 10px; font-size: 11px; font-weight: 700; color: var(--muted);
+      display: flex; align-items: center; gap: 4px;
+    }
+    .parcel-chip.primary { background: var(--primary-light); color: var(--primary); }
+    .parcel-delete-btn {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: #fef2f2; border: none;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; color: #dc2626; flex-shrink: 0;
+    }
+    .size-display { text-align: center; font-size: 38px; font-weight: 800; color: var(--primary); line-height: 1; }
+    .size-unit { font-size: 13px; color: var(--muted); text-align: center; margin: 4px 0 14px; }
+    .size-slider {
+      width: 100%; -webkit-appearance: none; appearance: none;
+      height: 6px; border-radius: 999px; outline: none; cursor: pointer;
+      background: linear-gradient(to right, var(--primary) 0%, var(--primary) var(--pct,0%), #ede9e4 var(--pct,0%), #ede9e4 100%);
+    }
+    .size-slider::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 26px; height: 26px;
+      border-radius: 50%; background: var(--primary);
+      box-shadow: 0 2px 8px var(--primary-glow); cursor: pointer;
+    }
+    .size-row { display: flex; justify-content: space-between; font-size: 10px; color: var(--muted); font-weight: 600; margin-top: 6px; }
+    .parcelas-summary {
+      background: var(--primary-light); border: 1.5px solid rgba(212,115,17,0.2);
+      border-radius: var(--radius); padding: 16px 20px;
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; text-align: center; margin-top: 20px;
+    }
+    .summary-val { font-size: 22px; font-weight: 800; color: var(--primary); }
+    .summary-lbl { font-size: 9px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 2px; }
+
+    /* ─── INVENTARIO FUNCIONAL ─────────────────── */
+    .inv-field-row {
+      display: flex; align-items: center; gap: 12px;
+      background: #f8f7f6; border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm); padding: 14px 16px;
+    }
+    .inv-field-icon { color: var(--primary); flex-shrink: 0; }
+    .inv-field-info { flex: 1; }
+    .inv-field-label { font-size: 10px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.07em; }
+    .inv-field-val { font-size: 15px; font-weight: 800; margin-top: 2px; }
+    .inv-input {
+      background: none; border: none; outline: none;
+      font-family: inherit; font-size: 15px; font-weight: 800;
+      color: var(--text); width: 100%;
+    }
+    .cond-check {
+      display: flex; align-items: center; gap: 12px;
+      padding: 13px 16px; background: white;
+      border: 1.5px solid var(--border); border-radius: var(--radius-sm);
+      cursor: pointer; transition: border-color 0.2s;
+    }
+    .cond-check.checked { border-color: var(--success); background: var(--success-bg); }
+    .cond-box {
+      width: 22px; height: 22px; border-radius: 6px;
+      border: 2px solid var(--border); background: white;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: all 0.2s; font-size: 13px;
+    }
+    .cond-check.checked .cond-box { background: var(--success); border-color: var(--success); color: white; }
+    .cond-text { font-size: 13px; font-weight: 600; }
+
+    /* QR generado */
+    .qr-generated {
+      background: white; border: 1.5px solid var(--border);
+      border-radius: var(--radius); padding: 20px;
+      display: flex; flex-direction: column; align-items: center; gap: 12px;
+    }
+    .qr-canvas-wrap {
+      width: 160px; height: 160px; background: white;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 12px; border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .qr-canvas-wrap canvas { width: 160px !important; height: 160px !important; }
+    .trace-key-big {
+      font-family: 'Space Mono', monospace; font-size: 13px;
+      color: var(--muted); text-align: center; letter-spacing: 0.04em;
+      background: #f8f7f6; border-radius: 8px; padding: 8px 14px;
+      border: 1px solid var(--border);
+    }
   `}</style>
 );
 
@@ -590,6 +711,7 @@ const BottomNav = ({ active, onChange }) => {
     { id: "fermentacion", icon: "inventory_2", label: "Proceso" },
     { id: "inventario", icon: "analytics", label: "Almacén" },
     { id: "registro", icon: "agriculture", label: "Registro" },
+    { id: "parcelas", icon: "grid_view", label: "Parcelas" },
   ];
   return (
     <nav className="bottom-nav">
@@ -938,6 +1060,16 @@ const Inventario = ({ goBack, activeLot, profile, showToast }) => {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
 
+  // Campos editables
+  const [pesoNeto, setPesoNeto] = useState("");
+  const [sacos, setSacos] = useState("");
+  const [fechaEntrada, setFechaEntrada] = useState(new Date().toISOString().split("T")[0]);
+  const [condPallets, setCondPallets] = useState(false);
+  const [condParedes, setCondParedes] = useState(false);
+  const [condOlores, setCondOlores] = useState(false);
+  const [traceKey, setTraceKey] = useState("");
+  const [qrUrl, setQrUrl] = useState("");
+
   useEffect(() => {
     const load = async () => {
       if (!activeLot) { setLoading(false); return; }
@@ -946,140 +1078,244 @@ const Inventario = ({ goBack, activeLot, profile, showToast }) => {
         .select("*")
         .eq("lot_id", activeLot.id)
         .maybeSingle();
-      setInventory(data);
+      if (data) {
+        setInventory(data);
+        setPesoNeto(data.net_weight_kg || "");
+        setSacos(data.bag_count || "");
+        setFechaEntrada(data.entry_date || new Date().toISOString().split("T")[0]);
+        setCondPallets(data.storage_on_pallets || false);
+        setCondParedes(data.away_from_walls || false);
+        setCondOlores(data.no_strong_odors || false);
+        if (data.traceability_key) {
+          setTraceKey(data.traceability_key);
+          generarQR(data.traceability_key);
+        }
+      } else {
+        // Pre-llenar con datos del lote
+        setPesoNeto(activeLot.weight_kg || "");
+        setSacos(Math.ceil((activeLot.weight_kg || 0) / 50) || "");
+      }
       setLoading(false);
     };
     load();
   }, [activeLot]);
 
-  const handleFinalize = async () => {
+  // Genera QR usando API pública (no requiere librerías)
+  const generarQR = (text) => {
+    const encoded = encodeURIComponent(text);
+    setQrUrl(`https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encoded}&color=1a1208&bgcolor=ffffff&margin=8`);
+  };
+
+  // Auto-calcular sacos cuando cambia el peso
+  useEffect(() => {
+    if (pesoNeto && !inventory) {
+      setSacos(Math.ceil(parseFloat(pesoNeto) / 50) || "");
+    }
+  }, [pesoNeto]);
+
+  const handleFinalizar = async () => {
     if (!activeLot) return;
+    if (!pesoNeto) { showToast("Ingresa el peso neto"); return; }
+
     setSaving(true);
-    const traceKey = `${new Date().getFullYear()}-${activeLot.variety}-${profile?.producer_id || "URB"}-${activeLot.lot_code}`;
+    const key = `${new Date().getFullYear()}-${activeLot.variety}-${profile?.producer_id || "URB"}-${activeLot.lot_code}`;
     const { data, error } = await supabase
       .from("inventory")
       .upsert({
         lot_id: activeLot.id,
-        net_weight_kg: activeLot.weight_kg,
-        bag_count: Math.ceil(activeLot.weight_kg / 50),
-        storage_on_pallets: true,
-        away_from_walls: true,
-        no_strong_odors: true,
-        traceability_key: traceKey,
+        net_weight_kg: parseFloat(pesoNeto),
+        bag_count: parseInt(sacos) || Math.ceil(parseFloat(pesoNeto) / 50),
+        entry_date: fechaEntrada,
+        storage_on_pallets: condPallets,
+        away_from_walls: condParedes,
+        no_strong_odors: condOlores,
+        traceability_key: key,
         ready_to_sell: true,
-        storage_location: "Centro de Almacenamiento Urabá C-4",
+        registered_at: new Date().toISOString(),
       }, { onConflict: "lot_id" })
       .select()
       .single();
+
     setSaving(false);
     if (!error) {
       setInventory(data);
-      // Actualizar estado del lote
+      setTraceKey(key);
+      generarQR(key);
       await supabase.from("lots").update({ status: "almacenamiento" }).eq("id", activeLot.id);
-      showToast("✓ Lote registrado en inventario");
+      showToast("✓ Lote registrado en almacén");
+    } else {
+      showToast("Error al guardar");
     }
   };
 
   if (loading) return (
     <div className="loading-screen">
       <div className="spinner" />
-      <span style={{ color: "var(--muted)", fontSize: 14 }}>Cargando inventario...</span>
+      <span style={{ color: "var(--muted)", fontSize: 14 }}>Cargando...</span>
     </div>
   );
 
+  const yaRegistrado = inventory?.ready_to_sell;
+  const condOk = condPallets && condParedes && condOlores;
+
   return (
     <div className="page-enter" style={{ display: "flex", flexDirection: "column", flex: 1, overflow: "hidden" }}>
-      <div style={{ padding: "8px 20px 16px", borderBottom: "1px solid var(--border)", flexShrink: 0 }}>
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 8 }}>
+
+      {/* Header */}
+      <div style={{ padding: "8px 20px 14px", borderBottom: "1px solid var(--border)", flexShrink: 0 }}>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 6 }}>
           <button className="header-icon-btn" onClick={goBack}><Icon name="arrow_back_ios_new" /></button>
-          <div style={{ fontWeight: 800, fontSize: 16 }}>Resumen de Inventario</div>
+          <div style={{ fontWeight: 800, fontSize: 16 }}>Almacenamiento</div>
           <div style={{ width: 40 }} />
         </div>
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: 8 }}>
-          <div>
-            <div style={{ fontSize: 10, fontWeight: 700, color: "var(--muted)", letterSpacing: "0.08em", textTransform: "uppercase" }}>Estado del lote</div>
-            <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 4 }}>
-              <div className="status-dot" />
-              <span style={{ color: "var(--success)", fontWeight: 800, fontSize: 13 }}>
-                {inventory?.ready_to_sell ? "LISTO PARA VENDER" : "EN PROCESO"}
-              </span>
-            </div>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            <div className="status-dot" style={{ background: yaRegistrado ? "var(--success)" : "#f59e0b" }} />
+            <span style={{ color: yaRegistrado ? "var(--success)" : "#d97706", fontWeight: 800, fontSize: 12 }}>
+              {yaRegistrado ? "REGISTRADO" : "PENDIENTE"}
+            </span>
           </div>
-          <div className="region-tag">REGIÓN URABÁ</div>
+          <div className="region-tag">URABÁ</div>
         </div>
       </div>
 
       <div className="page-scroll px py">
-        {activeLot ? (
+        {!activeLot ? (
+          <div className="empty-state" style={{ marginTop: 40 }}>
+            <div className="empty-state-icon">📦</div>
+            <div className="empty-state-text">No hay lotes activos.</div>
+          </div>
+        ) : (
           <>
-            <div className="summary-card mb-6">
-              <div className="grid-2">
-                <div className="weight-card">
-                  <div style={{ fontSize: 11, fontWeight: 600, color: "var(--muted)", marginBottom: 6 }}>Peso neto (cacao seco)</div>
-                  <div style={{ display: "flex", alignItems: "baseline", gap: 8 }}>
-                    <span className="weight-number">{inventory?.net_weight_kg || activeLot.weight_kg || "—"}</span>
-                    <span className="weight-unit">kg</span>
-                  </div>
+            {/* Lote info */}
+            <div style={{ background: "var(--primary-light)", border: "1.5px solid rgba(212,115,17,0.2)", borderRadius: "var(--radius)", padding: "12px 16px", marginBottom: 20, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <div>
+                <div style={{ fontSize: 10, fontWeight: 700, color: "var(--primary)", textTransform: "uppercase", letterSpacing: "0.08em" }}>Lote en proceso</div>
+                <div style={{ fontWeight: 800, fontSize: 16, marginTop: 2 }}>#{activeLot.lot_code}</div>
+              </div>
+              <div style={{ textAlign: "right" }}>
+                <div style={{ fontSize: 11, color: "var(--muted)", fontWeight: 600 }}>{activeLot.variety}</div>
+                <div style={{ fontSize: 11, color: "var(--muted)", fontWeight: 600 }}>{activeLot.parcel_name}</div>
+              </div>
+            </div>
+
+            {/* ── Campos editables ── */}
+            <div style={{ fontSize: 10, fontWeight: 800, color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 10 }}>Datos de entrada</div>
+            <div className="space-y-sm mb-6">
+
+              {/* Peso neto */}
+              <div className="inv-field-row">
+                <Icon name="scale" className="inv-field-icon" />
+                <div className="inv-field-info">
+                  <div className="inv-field-label">Peso neto cacao seco (kg)</div>
+                  <input
+                    className="inv-input"
+                    type="number"
+                    placeholder="Ej: 420.5"
+                    value={pesoNeto}
+                    onChange={e => setPesoNeto(e.target.value)}
+                    disabled={yaRegistrado}
+                  />
                 </div>
-                <div className="sub-card">
-                  <div style={{ fontSize: 11, fontWeight: 600, color: "var(--muted)", marginBottom: 6 }}>Sacos (Fique)</div>
-                  <div style={{ display: "flex", alignItems: "baseline", gap: 6 }}>
-                    <span className="sub-number">{inventory?.bag_count || "—"}</span>
-                    <span style={{ fontSize: 12, color: "var(--muted)" }}>unidades</span>
-                  </div>
+              </div>
+
+              {/* Sacos */}
+              <div className="inv-field-row">
+                <Icon name="inventory_2" className="inv-field-icon" />
+                <div className="inv-field-info">
+                  <div className="inv-field-label">Número de sacos / costales</div>
+                  <input
+                    className="inv-input"
+                    type="number"
+                    placeholder="Auto-calculado"
+                    value={sacos}
+                    onChange={e => setSacos(e.target.value)}
+                    disabled={yaRegistrado}
+                  />
                 </div>
-                <div className="sub-card">
-                  <div style={{ fontSize: 11, fontWeight: 600, color: "var(--muted)", marginBottom: 6 }}>ID del productor</div>
-                  <div style={{ fontWeight: 800, fontSize: 17 }}>{profile?.producer_id || "—"}</div>
+                <div style={{ fontSize: 10, color: "var(--muted)", fontWeight: 600, whiteSpace: "nowrap" }}>~50 kg/saco</div>
+              </div>
+
+              {/* Fecha entrada */}
+              <div className="inv-field-row">
+                <Icon name="calendar_today" className="inv-field-icon" />
+                <div className="inv-field-info">
+                  <div className="inv-field-label">Fecha de entrada al almacén</div>
+                  <input
+                    className="inv-input"
+                    type="date"
+                    value={fechaEntrada}
+                    onChange={e => setFechaEntrada(e.target.value)}
+                    disabled={yaRegistrado}
+                  />
                 </div>
               </div>
             </div>
 
-            <div className="mb-6">
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 12, fontWeight: 800, letterSpacing: "0.08em", textTransform: "uppercase" }}>
-                  <Icon name="warehouse" style={{ color: "var(--primary)", fontSize: 18 }} /> Condiciones de almacenamiento
+            {/* ── Condiciones ── */}
+            <div style={{ fontSize: 10, fontWeight: 800, color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 10 }}>
+              Condiciones de almacenamiento
+            </div>
+            <div className="space-y-sm mb-6">
+              {[
+                { label: "Almacenado sobre pallets", val: condPallets, set: setCondPallets },
+                { label: "Alejado de las paredes (mín. 50 cm)", val: condParedes, set: setCondParedes },
+                { label: "Sin presencia de olores fuertes", val: condOlores, set: setCondOlores },
+              ].map(({ label, val, set }) => (
+                <div
+                  key={label}
+                  className={`cond-check${val ? " checked" : ""}`}
+                  onClick={() => !yaRegistrado && set(!val)}
+                >
+                  <div className="cond-box">{val ? "✓" : ""}</div>
+                  <div className="cond-text">{label}</div>
                 </div>
-                <span style={{ fontSize: 10, fontWeight: 700, color: "var(--muted)" }}>{inventory ? "VERIFICADA" : "PENDIENTE"}</span>
-              </div>
-              <div className="space-y-sm">
-                {["Almacenado en pallets", "Colocado lejos de las paredes", "No hay presencia de olores fuertes"].map(t => (
-                  <div className="checklist-item" key={t}>
-                    <div className="check-icon">{inventory ? "✓" : "○"}</div>
-                    <div className="checklist-text">{t}</div>
-                  </div>
-                ))}
-              </div>
+              ))}
             </div>
 
-            {inventory?.traceability_key && (
-              <div className="traceability-card mb-6">
-                <div className="qr-box">
-                  <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsMw5qq9wSAzHvxnrMSdvOVmM_96tzNLZMqXry9X8PGA6s1AZvkZ0nmXoiokzZwm3F3VT6st4Yz3758HNW7MGd7Qz9U7crV4EpFyfWXu8BgFEVF3d1rStSzriyJEVdii_3Og_oJbBdnDkO0vhVCWJ2ShCxa0r7-KftT9OjxEH5i63iA0sKst6KxngltJ43TETckbXAgQsPBDbJdRbFMRyguM6vgSslYycXBawxzQPup06DOUWH0xCHR8Qa2O-qIKEvI5chpWGNdndO" alt="QR Code" />
+            {/* ── QR / Trazabilidad ── */}
+            {traceKey ? (
+              <div className="qr-generated mb-6">
+                <div style={{ fontSize: 10, fontWeight: 800, color: "var(--primary)", textTransform: "uppercase", letterSpacing: "0.1em" }}>
+                  Clave de trazabilidad generada
                 </div>
-                <div>
-                  <div className="trace-key">Clave de trazabilidad</div>
-                  <div className="trace-lot">{inventory.traceability_key}</div>
-                  <div className="trace-sync">Registrado: {new Date(inventory.registered_at).toLocaleString("es-CO")}</div>
+                <div className="qr-canvas-wrap">
+                  {qrUrl && <img src={qrUrl} alt="QR" style={{ width: 160, height: 160 }} />}
+                </div>
+                <div className="trace-key-big">{traceKey}</div>
+                <div style={{ fontSize: 11, color: "var(--muted)" }}>
+                  Registrado: {inventory?.registered_at ? new Date(inventory.registered_at).toLocaleString("es-CO") : "—"}
+                </div>
+              </div>
+            ) : (
+              <div style={{ background: "#f8f7f6", border: "1.5px dashed var(--border)", borderRadius: "var(--radius)", padding: 20, textAlign: "center", marginBottom: 20 }}>
+                <div style={{ fontSize: 28, marginBottom: 8 }}>📋</div>
+                <div style={{ fontSize: 13, fontWeight: 600, color: "var(--muted)" }}>
+                  El QR y la clave de trazabilidad<br />se generan al finalizar el registro.
                 </div>
               </div>
             )}
           </>
-        ) : (
-          <div className="empty-state" style={{ marginTop: 40 }}>
-            <div className="empty-state-icon">📦</div>
-            <div className="empty-state-text">No hay lotes activos para mostrar.</div>
-          </div>
         )}
+        <div style={{ height: 10 }} />
       </div>
 
+      {/* Footer */}
       {activeLot && (
         <div className="footer-actions">
-          <button className="primary-btn" onClick={handleFinalize} disabled={saving || inventory?.ready_to_sell}>
-            <Icon name="cloud_upload" />
-            {saving ? "Guardando..." : inventory?.ready_to_sell ? "Ya registrado ✓" : "FINALIZAR & REGISTRAR"}
+          <button
+            className="primary-btn"
+            onClick={handleFinalizar}
+            disabled={saving || yaRegistrado}
+          >
+            <Icon name={yaRegistrado ? "check_circle" : "cloud_upload"} />
+            {saving ? "Guardando..." : yaRegistrado ? "Registrado ✓" : "Finalizar & Generar QR"}
           </button>
-          <button className="secondary-btn"><Icon name="share" /> RECIBO DE EXPORTACIÓN</button>
+          {yaRegistrado && (
+            <button className="secondary-btn" onClick={() => window.open(qrUrl, "_blank")}>
+              <Icon name="share" /> Compartir comprobante
+            </button>
+          )}
           <div style={{ height: 4 }} />
         </div>
       )}
@@ -1087,26 +1323,195 @@ const Inventario = ({ goBack, activeLot, profile, showToast }) => {
   );
 };
 
+// ─── PARCELAS ──────────────────────────────────────────────────────────────────
+const Parcelas = ({ userId, showToast }) => {
+  const [parcelas, setParcelas] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+  const [saving, setSaving] = useState(false);
+  const [nombre, setNombre] = useState("");
+  const [hectareas, setHectareas] = useState(1);
+  const [arboles, setArboles] = useState(100);
+
+  const cargar = async () => {
+    setLoading(true);
+    const { data } = await supabase.from("parcelas").select("*").eq("farmer_id", userId).order("created_at", { ascending: false });
+    setParcelas(data || []);
+    setLoading(false);
+  };
+  useEffect(() => { cargar(); }, [userId]);
+
+  const resetForm = () => { setNombre(""); setHectareas(1); setArboles(100); };
+
+  const handleGuardar = async () => {
+    if (!nombre.trim()) return;
+    setSaving(true);
+    const { data, error } = await supabase.from("parcelas")
+      .insert({ farmer_id: userId, nombre: nombre.trim(), hectareas: parseFloat(hectareas), num_arboles: parseInt(arboles) })
+      .select().single();
+    setSaving(false);
+    if (!error) { setParcelas(prev => [data, ...prev]); showToast("✓ Parcela registrada"); setShowModal(false); resetForm(); }
+    else showToast("Error al guardar");
+  };
+
+  const handleEliminar = async (id) => {
+    await supabase.from("parcelas").delete().eq("id", id);
+    setParcelas(prev => prev.filter(p => p.id !== id));
+    showToast("Parcela eliminada");
+  };
+
+  const totalHa = parcelas.reduce((s, p) => s + (p.hectareas || 0), 0);
+  const totalArboles = parcelas.reduce((s, p) => s + (p.num_arboles || 0), 0);
+  const sliderHaPct = (((hectareas - 0.5) / 49.5) * 100).toFixed(1);
+  const sliderArPct = (((arboles - 10) / 1990) * 100).toFixed(1);
+
+  return (
+    <div className="page-enter" style={{ display: "flex", flexDirection: "column", flex: 1, overflow: "hidden" }}>
+      <div style={{ padding: "8px 20px 12px", display: "flex", alignItems: "center", justifyContent: "space-between", flexShrink: 0 }}>
+        <div>
+          <div style={{ fontWeight: 800, fontSize: 17 }}>Mis Parcelas</div>
+          <div style={{ fontSize: 11, color: "var(--muted)", marginTop: 2 }}>Terrenos de tu finca</div>
+        </div>
+        <button className="primary-btn" style={{ width: "auto", padding: "10px 18px", fontSize: 13, borderRadius: 12 }} onClick={() => setShowModal(true)}>
+          <Icon name="add" /> Nueva
+        </button>
+      </div>
+
+      <div className="page-scroll px">
+        {loading ? (
+          <div style={{ display: "flex", justifyContent: "center", paddingTop: 60 }}><div className="spinner" /></div>
+        ) : parcelas.length === 0 ? (
+          <div className="empty-state" style={{ marginTop: 32 }}>
+            <div className="empty-state-icon">🌿</div>
+            <div className="empty-state-text">Aún no tienes parcelas.<br />Agrega los terrenos de tu finca.</div>
+          </div>
+        ) : (
+          <>
+            <div className="space-y" style={{ paddingTop: 4 }}>
+              {parcelas.map(p => (
+                <div key={p.id} className="parcel-card">
+                  <div className="parcel-icon">🌿</div>
+                  <div className="parcel-info">
+                    <div className="parcel-name">{p.nombre}</div>
+                    <div className="parcel-chips">
+                      <span className="parcel-chip primary"><Icon name="straighten" style={{ fontSize: 11 }} /> {p.hectareas} ha</span>
+                      <span className="parcel-chip">🌱 {p.num_arboles?.toLocaleString("es-CO")} árboles</span>
+                    </div>
+                  </div>
+                  <button className="parcel-delete-btn" onClick={() => handleEliminar(p.id)}>
+                    <Icon name="delete_outline" style={{ fontSize: 18 }} />
+                  </button>
+                </div>
+              ))}
+            </div>
+            <div className="parcelas-summary">
+              <div><div className="summary-val">{parcelas.length}</div><div className="summary-lbl">Parcelas</div></div>
+              <div><div className="summary-val">{totalHa.toFixed(1)}</div><div className="summary-lbl">Hectáreas</div></div>
+              <div><div className="summary-val">{totalArboles >= 1000 ? (totalArboles / 1000).toFixed(1) + "k" : totalArboles}</div><div className="summary-lbl">Árboles</div></div>
+            </div>
+          </>
+        )}
+        <div style={{ height: 20 }} />
+      </div>
+
+      {showModal && (
+        <div className="modal-backdrop" onClick={e => { if (e.target === e.currentTarget) { setShowModal(false); resetForm(); } }}>
+          <div className="modal-sheet">
+            <div className="modal-handle" />
+            <div className="modal-title">Nueva Parcela</div>
+            <div className="space-y mb-6">
+              <div>
+                <div className="field-label">Nombre o código</div>
+                <div className="field-wrap">
+                  <input className="field-input" placeholder='Ej: "Lote 1", "La Cañada"' value={nombre} onChange={e => setNombre(e.target.value)} autoFocus />
+                  <Icon name="terrain" className="field-icon" />
+                </div>
+              </div>
+              <div>
+                <div className="field-label">Tamaño</div>
+                <div className="size-display">{Number(hectareas).toFixed(1)}</div>
+                <div className="size-unit">hectáreas</div>
+                <input type="range" min="0.5" max="50" step="0.5" value={hectareas} onChange={e => setHectareas(e.target.value)} className="size-slider" style={{ "--pct": `${sliderHaPct}%` }} />
+                <div className="size-row"><span>0.5 ha</span><span>50 ha</span></div>
+              </div>
+              <div>
+                <div className="field-label">Número de árboles de cacao</div>
+                <div className="size-display">{Number(arboles).toLocaleString("es-CO")}</div>
+                <div className="size-unit">árboles · densidad ~{hectareas > 0 ? Math.round(arboles / hectareas) : 0} por ha</div>
+                <input type="range" min="10" max="2000" step="10" value={arboles} onChange={e => setArboles(e.target.value)} className="size-slider" style={{ "--pct": `${sliderArPct}%` }} />
+                <div className="size-row"><span>10</span><span>2,000</span></div>
+              </div>
+            </div>
+            <button className="primary-btn" onClick={handleGuardar} disabled={saving || !nombre.trim()}>
+              {saving ? "Guardando..." : "Registrar Parcela"} <Icon name="check" style={{ fontSize: 16 }} />
+            </button>
+            <button className="secondary-btn" style={{ marginTop: 10 }} onClick={() => { setShowModal(false); resetForm(); }}>Cancelar</button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
 // ─── REGISTRO ──────────────────────────────────────────────────────────────────
-const Registro = ({ goBack, userId, showToast, onLotCreated }) => {
+const Registro = ({ goBack, userId, showToast, onLotCreated, navigate }) => {
   const [variety, setVariety] = useState("CCN51");
   const [check1, setCheck1] = useState(true);
   const [check2, setCheck2] = useState(false);
   const [harvestDate, setHarvestDate] = useState(new Date().toISOString().split("T")[0]);
-  const [parcel, setParcel] = useState("Parcela A - Aldea Genes");
+  const [parcelId, setParcelId] = useState("");
   const [weightKg, setWeightKg] = useState("");
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState(null);
+  const [parcelas, setParcelas] = useState([]);
+  const [loadingParcelas, setLoadingParcelas] = useState(true);
 
-  const varieties = [
+  // Variedades dinámicas
+  const [varieties, setVarieties] = useState([
     { key: "CCN51", type: "HÍBRIDO" },
     { key: "ICS95", type: "CLON" },
     { key: "Mezclado", type: "OTRO" },
-  ];
+  ]);
+  const [showAddVariety, setShowAddVariety] = useState(false);
+  const [newVarietyName, setNewVarietyName] = useState("");
+  const [newVarietyType, setNewVarietyType] = useState("CLON");
+
+  useEffect(() => {
+    setLoadingParcelas(true);
+    supabase.from("parcelas").select("id,nombre,hectareas,num_arboles")
+      .eq("farmer_id", userId).order("created_at", { ascending: false })
+      .then(({ data }) => {
+        const lista = data || [];
+        setParcelas(lista);
+        if (lista.length > 0) setParcelId(lista[0].id);
+        setLoadingParcelas(false);
+      });
+  }, [userId]);
+
+  const handleAddVariety = () => {
+    const nombre = newVarietyName.trim().toUpperCase();
+    if (!nombre) return;
+    if (varieties.find(v => v.key === nombre)) {
+      showToast("Esa variedad ya existe");
+      return;
+    }
+    const nueva = { key: nombre, type: newVarietyType };
+    setVarieties(prev => [...prev, nueva]);
+    setVariety(nombre);
+    setNewVarietyName("");
+    setShowAddVariety(false);
+    showToast(`✓ Variedad "${nombre}" agregada`);
+  };
+
+  const parcelaSeleccionada = parcelas.find(p => p.id === parcelId);
 
   const handleSubmit = async () => {
     if (!harvestDate || !weightKg) {
       setError("Por favor completa la fecha y el peso de la cosecha.");
+      return;
+    }
+    if (!parcelId) {
+      setError("Debes seleccionar una parcela.");
       return;
     }
     setSaving(true);
@@ -1118,7 +1523,8 @@ const Registro = ({ goBack, userId, showToast, onLotCreated }) => {
         farmer_id: userId,
         lot_code: lotCode,
         variety,
-        parcel_name: parcel,
+        parcel_name: parcelaSeleccionada?.nombre || "",
+        parcel_id: parcelId,
         harvest_date: harvestDate,
         weight_kg: parseFloat(weightKg),
         status: "fermentacion",
@@ -1136,6 +1542,8 @@ const Registro = ({ goBack, userId, showToast, onLotCreated }) => {
       goBack();
     }
   };
+
+  const tiposVariedad = ["CLON", "HÍBRIDO", "NATIVO", "OTRO"];
 
   return (
     <div className="page-enter" style={{ display: "flex", flexDirection: "column", flex: 1, overflow: "hidden" }}>
@@ -1161,6 +1569,8 @@ const Registro = ({ goBack, userId, showToast, onLotCreated }) => {
         {error && <div className="login-error" style={{ marginBottom: 16 }}>{error}</div>}
 
         <div className="space-y mb-6">
+
+          {/* Fecha */}
           <div>
             <div className="field-label">Fecha de cosecha</div>
             <div className="field-wrap">
@@ -1168,6 +1578,8 @@ const Registro = ({ goBack, userId, showToast, onLotCreated }) => {
               <Icon name="calendar_today" className="field-icon" />
             </div>
           </div>
+
+          {/* Peso */}
           <div>
             <div className="field-label">Peso aproximado (kg)</div>
             <div className="field-wrap">
@@ -1175,22 +1587,57 @@ const Registro = ({ goBack, userId, showToast, onLotCreated }) => {
               <Icon name="scale" className="field-icon" />
             </div>
           </div>
+
+          {/* Parcela */}
           <div>
-            <div className="field-label">Lote / Parcela ID</div>
-            <div className="field-wrap">
-              <select className="field-select" value={parcel} onChange={e => setParcel(e.target.value)} style={{ paddingRight: 44 }}>
-                <option>Parcela A - Aldea Genes</option>
-                <option>Parcela B - parte alta</option>
-                <option>Parcela C - llanura</option>
-              </select>
-              <Icon name="expand_more" className="field-icon" />
-            </div>
+            <div className="field-label">Parcela de origen</div>
+            {loadingParcelas ? (
+              <div style={{ padding: "14px 0" }}><div className="spinner" style={{ width: 24, height: 24, margin: "0 auto" }} /></div>
+            ) : parcelas.length === 0 ? (
+              <div onClick={() => navigate && navigate("parcelas")} style={{ background: "#fef3e8", border: "1.5px dashed rgba(212,115,17,0.4)", borderRadius: "var(--radius-sm)", padding: "16px", fontSize: 13, color: "var(--primary)", fontWeight: 600, display: "flex", alignItems: "center", gap: 10, cursor: "pointer" }}>
+                <Icon name="add_circle_outline" style={{ fontSize: 20 }} />
+                <div>
+                  <div>No tienes parcelas registradas</div>
+                  <div style={{ fontSize: 11, fontWeight: 500, marginTop: 2 }}>Toca aquí para agregar tus terrenos →</div>
+                </div>
+              </div>
+            ) : (
+              <>
+                <div className="field-wrap">
+                  <select className="field-select" value={parcelId} onChange={e => setParcelId(e.target.value)} style={{ paddingRight: 44 }}>
+                    {parcelas.map(p => <option key={p.id} value={p.id}>{p.nombre}</option>)}
+                  </select>
+                  <Icon name="expand_more" className="field-icon" />
+                </div>
+                {parcelaSeleccionada && (
+                  <div style={{ marginTop: 8, background: "var(--primary-light)", borderRadius: "var(--radius-sm)", padding: "10px 14px", display: "flex", gap: 16, fontSize: 12 }}>
+                    <span style={{ fontWeight: 700, color: "var(--primary)" }}>🌿 {parcelaSeleccionada.hectareas} ha</span>
+                    <span style={{ color: "var(--muted)", fontWeight: 600 }}>🌱 {parcelaSeleccionada.num_arboles?.toLocaleString("es-CO")} árboles</span>
+                  </div>
+                )}
+              </>
+            )}
           </div>
+
+          {/* Variedad con botón + */}
           <div>
-            <div className="field-label">Variedad de cacao</div>
-            <div className="variety-grid">
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 8 }}>
+              <div className="field-label" style={{ margin: 0 }}>Variedad de cacao</div>
+              <button
+                onClick={() => setShowAddVariety(true)}
+                style={{ background: "var(--primary-light)", border: "none", borderRadius: 8, padding: "5px 12px", fontSize: 12, fontWeight: 700, color: "var(--primary)", cursor: "pointer", display: "flex", alignItems: "center", gap: 4 }}
+              >
+                <Icon name="add" style={{ fontSize: 14 }} /> Nueva
+              </button>
+            </div>
+            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
               {varieties.map(v => (
-                <button key={v.key} className={`variety-btn${variety === v.key ? " selected" : ""}`} onClick={() => setVariety(v.key)}>
+                <button
+                  key={v.key}
+                  className={`variety-btn${variety === v.key ? " selected" : ""}`}
+                  style={{ flex: "1 1 80px", minWidth: 80 }}
+                  onClick={() => setVariety(v.key)}
+                >
                   <span className="variety-type">{v.type}</span>
                   <span className="variety-name">{v.key}</span>
                 </button>
@@ -1199,6 +1646,7 @@ const Registro = ({ goBack, userId, showToast, onLotCreated }) => {
           </div>
         </div>
 
+        {/* Control calidad */}
         <div className="mb-6">
           <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 10 }}>
             <Icon name="verified" style={{ color: "var(--primary)", fontSize: 16 }} />
@@ -1219,11 +1667,65 @@ const Registro = ({ goBack, userId, showToast, onLotCreated }) => {
       </div>
 
       <div className="footer-actions">
-        <button className="primary-btn" onClick={handleSubmit} disabled={saving}>
+        <button className="primary-btn" onClick={handleSubmit} disabled={saving || parcelas.length === 0}>
           {saving ? "Guardando..." : "Registrar & Continuar"} <Icon name="arrow_forward" style={{ fontSize: 16 }} />
         </button>
         <div style={{ height: 4 }} />
       </div>
+
+      {/* Modal agregar variedad */}
+      {showAddVariety && (
+        <div className="modal-backdrop" onClick={e => { if (e.target === e.currentTarget) setShowAddVariety(false); }}>
+          <div className="modal-sheet">
+            <div className="modal-handle" />
+            <div className="modal-title">Nueva Variedad</div>
+
+            <div className="space-y mb-6">
+              <div>
+                <div className="field-label">Nombre de la variedad</div>
+                <div className="field-wrap">
+                  <input
+                    className="field-input"
+                    placeholder='Ej: TSH565, ICS1, Amelonado...'
+                    value={newVarietyName}
+                    onChange={e => setNewVarietyName(e.target.value.toUpperCase())}
+                    autoFocus
+                  />
+                  <Icon name="eco" className="field-icon" />
+                </div>
+              </div>
+              <div>
+                <div className="field-label">Tipo</div>
+                <div style={{ display: "flex", gap: 8 }}>
+                  {tiposVariedad.map(t => (
+                    <button
+                      key={t}
+                      onClick={() => setNewVarietyType(t)}
+                      style={{
+                        flex: 1, padding: "10px 4px", borderRadius: "var(--radius-sm)",
+                        border: `1.5px solid ${newVarietyType === t ? "var(--primary)" : "var(--border)"}`,
+                        background: newVarietyType === t ? "var(--primary-light)" : "white",
+                        fontFamily: "inherit", fontSize: 11, fontWeight: 700,
+                        color: newVarietyType === t ? "var(--primary)" : "var(--muted)",
+                        cursor: "pointer"
+                      }}
+                    >
+                      {t}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <button className="primary-btn" onClick={handleAddVariety} disabled={!newVarietyName.trim()}>
+              Agregar variedad <Icon name="check" style={{ fontSize: 16 }} />
+            </button>
+            <button className="secondary-btn" style={{ marginTop: 10 }} onClick={() => setShowAddVariety(false)}>
+              Cancelar
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
@@ -1249,7 +1751,10 @@ export default function App() {
     });
 
     // 2. Cambios de sesión
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      // Ignorar eventos que no cambian el estado real
+      if (event === 'TOKEN_REFRESHED') return;
+      if (event === 'INITIAL_SESSION') return;
       setSession(session);
     });
 
@@ -1285,9 +1790,25 @@ export default function App() {
     if (!session) { setProfile(null); setLots([]); return; }
     const userId = session.user.id;
 
-    // Perfil
-    supabase.from("profiles").select("*").eq("id", userId).single()
-      .then(({ data }) => setProfile(data));
+    // Cargar perfil, crearlo si no existe
+    supabase.from("profiles").select("*").eq("id", userId).maybeSingle()
+    .then(async ({ data }) => {
+      if (data) {
+        setProfile(data);
+      } else {
+        const { data: newProfile } = await supabase
+          .from("profiles")
+          .insert({
+            id: userId,
+            full_name: session.user.user_metadata?.full_name || "Agricultor",
+            avatar_url: session.user.user_metadata?.avatar_url || null,
+            producer_id: "URB-" + Math.floor(Math.random() * 9999 + 1).toString().padStart(4, "0"),
+          })
+          .select()
+          .single();
+        setProfile(newProfile);
+      }
+    });
 
     // Lotes del agricultor, ordenados por fecha reciente
     supabase.from("lots").select("*").eq("farmer_id", userId).order("created_at", { ascending: false })
@@ -1334,9 +1855,11 @@ export default function App() {
     panel: <Panel navigate={navigate} profile={profile} lots={lots} />,
     fermentacion: <Fermentacion goBack={goBack} activeLot={activeLot} showToast={showToast} />,
     inventario: <Inventario goBack={goBack} activeLot={activeLot} profile={profile} showToast={showToast} />,
+    parcelas: <Parcelas userId={session.user.id} showToast={showToast} />,
     registro: (
       <Registro
         goBack={goBack}
+        navigate={navigate}
         userId={session.user.id}
         showToast={showToast}
         onLotCreated={(newLot) => setLots(prev => [newLot, ...prev])}
