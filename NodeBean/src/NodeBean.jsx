@@ -559,7 +559,7 @@ const IonicStyles = () => (
 
     .material-icons { font-family: 'Material Icons'; font-style: normal; font-size: 20px; display: inline-block; vertical-align: middle; line-height: 1; }
 
-    /* ─── MODAL VARIEDAD ─────────────────────────── */
+    /* ─── MODAL ──────────────────────────────────── */
     .modal-backdrop {
       position: fixed; inset: 0; background: rgba(0,0,0,0.45);
       z-index: 200; display: flex; align-items: flex-end; justify-content: center;
@@ -567,118 +567,49 @@ const IonicStyles = () => (
     .modal-sheet {
       background: white; border-radius: 24px 24px 0 0;
       padding: 0 20px 40px; width: 100%; max-width: 430px;
-      animation: slideUp 0.28s ease;
-      max-height: 92dvh; overflow-y: auto;
+      animation: slideUp 0.28s ease; max-height: 92dvh; overflow-y: auto;
     }
     .modal-sheet::-webkit-scrollbar { display: none; }
-    @keyframes slideUp {
-      from { transform: translateY(100%); }
-      to   { transform: translateY(0); }
-    }
-    .modal-handle {
-      width: 40px; height: 4px; background: #e5e5e5;
-      border-radius: 999px; margin: 14px auto 18px;
-    }
+    @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+    .modal-handle { width: 40px; height: 4px; background: #e5e5e5; border-radius: 999px; margin: 14px auto 18px; }
     .modal-title { font-size: 18px; font-weight: 800; margin-bottom: 22px; text-align: center; }
 
-    /* ─── PARCELAS ─────────────────────────────── */
-    .parcel-card {
-      background: white; border: 1.5px solid var(--border);
-      border-radius: var(--radius); padding: 16px 18px;
-      display: flex; align-items: center; gap: 14px;
-    }
-    .parcel-icon {
-      width: 46px; height: 46px; border-radius: 14px;
-      background: var(--primary-light);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 22px; flex-shrink: 0;
-    }
+    /* ─── PARCELAS ───────────────────────────────── */
+    .parcel-card { background: white; border: 1.5px solid var(--border); border-radius: var(--radius); padding: 16px 18px; display: flex; align-items: center; gap: 14px; }
+    .parcel-icon { width: 46px; height: 46px; border-radius: 14px; background: var(--primary-light); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
     .parcel-info { flex: 1; min-width: 0; }
     .parcel-name { font-size: 15px; font-weight: 800; }
     .parcel-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
-    .parcel-chip {
-      background: #f3f0ed; border-radius: 8px;
-      padding: 3px 10px; font-size: 11px; font-weight: 700; color: var(--muted);
-      display: flex; align-items: center; gap: 4px;
-    }
+    .parcel-chip { background: #f3f0ed; border-radius: 8px; padding: 3px 10px; font-size: 11px; font-weight: 700; color: var(--muted); display: flex; align-items: center; gap: 4px; }
     .parcel-chip.primary { background: var(--primary-light); color: var(--primary); }
-    .parcel-delete-btn {
-      width: 34px; height: 34px; border-radius: 50%;
-      background: #fef2f2; border: none;
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer; color: #dc2626; flex-shrink: 0;
-    }
+    .parcel-delete-btn { width: 34px; height: 34px; border-radius: 50%; background: #fef2f2; border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #dc2626; flex-shrink: 0; }
     .size-display { text-align: center; font-size: 38px; font-weight: 800; color: var(--primary); line-height: 1; }
     .size-unit { font-size: 13px; color: var(--muted); text-align: center; margin: 4px 0 14px; }
-    .size-slider {
-      width: 100%; -webkit-appearance: none; appearance: none;
-      height: 6px; border-radius: 999px; outline: none; cursor: pointer;
-      background: linear-gradient(to right, var(--primary) 0%, var(--primary) var(--pct,0%), #ede9e4 var(--pct,0%), #ede9e4 100%);
-    }
-    .size-slider::-webkit-slider-thumb {
-      -webkit-appearance: none; width: 26px; height: 26px;
-      border-radius: 50%; background: var(--primary);
-      box-shadow: 0 2px 8px var(--primary-glow); cursor: pointer;
-    }
+    .size-slider { width: 100%; -webkit-appearance: none; appearance: none; height: 6px; border-radius: 999px; outline: none; cursor: pointer; background: linear-gradient(to right, var(--primary) 0%, var(--primary) var(--pct,0%), #ede9e4 var(--pct,0%), #ede9e4 100%); }
+    .size-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 26px; height: 26px; border-radius: 50%; background: var(--primary); box-shadow: 0 2px 8px var(--primary-glow); cursor: pointer; }
     .size-row { display: flex; justify-content: space-between; font-size: 10px; color: var(--muted); font-weight: 600; margin-top: 6px; }
-    .parcelas-summary {
-      background: var(--primary-light); border: 1.5px solid rgba(212,115,17,0.2);
-      border-radius: var(--radius); padding: 16px 20px;
-      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; text-align: center; margin-top: 20px;
-    }
+    .parcelas-summary { background: var(--primary-light); border: 1.5px solid rgba(212,115,17,0.2); border-radius: var(--radius); padding: 16px 20px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; text-align: center; margin-top: 20px; }
     .summary-val { font-size: 22px; font-weight: 800; color: var(--primary); }
     .summary-lbl { font-size: 9px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 2px; }
 
-    /* ─── INVENTARIO FUNCIONAL ─────────────────── */
-    .inv-field-row {
-      display: flex; align-items: center; gap: 12px;
-      background: #f8f7f6; border: 1.5px solid var(--border);
-      border-radius: var(--radius-sm); padding: 14px 16px;
-    }
+    /* ─── INVENTARIO FUNCIONAL ───────────────────── */
+    .inv-field-row { display: flex; align-items: center; gap: 12px; background: #f8f7f6; border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 14px 16px; }
     .inv-field-icon { color: var(--primary); flex-shrink: 0; }
     .inv-field-info { flex: 1; }
     .inv-field-label { font-size: 10px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.07em; }
-    .inv-field-val { font-size: 15px; font-weight: 800; margin-top: 2px; }
-    .inv-input {
-      background: none; border: none; outline: none;
-      font-family: inherit; font-size: 15px; font-weight: 800;
-      color: var(--text); width: 100%;
-    }
-    .cond-check {
-      display: flex; align-items: center; gap: 12px;
-      padding: 13px 16px; background: white;
-      border: 1.5px solid var(--border); border-radius: var(--radius-sm);
-      cursor: pointer; transition: border-color 0.2s;
-    }
+    .inv-input { background: none; border: none; outline: none; font-family: inherit; font-size: 15px; font-weight: 800; color: var(--text); width: 100%; }
+    .cond-check { display: flex; align-items: center; gap: 12px; padding: 13px 16px; background: white; border: 1.5px solid var(--border); border-radius: var(--radius-sm); cursor: pointer; transition: border-color 0.2s; }
     .cond-check.checked { border-color: var(--success); background: var(--success-bg); }
-    .cond-box {
-      width: 22px; height: 22px; border-radius: 6px;
-      border: 2px solid var(--border); background: white;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; transition: all 0.2s; font-size: 13px;
-    }
+    .cond-box { width: 22px; height: 22px; border-radius: 6px; border: 2px solid var(--border); background: white; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.2s; font-size: 13px; }
     .cond-check.checked .cond-box { background: var(--success); border-color: var(--success); color: white; }
     .cond-text { font-size: 13px; font-weight: 600; }
 
     /* QR generado */
-    .qr-generated {
-      background: white; border: 1.5px solid var(--border);
-      border-radius: var(--radius); padding: 20px;
-      display: flex; flex-direction: column; align-items: center; gap: 12px;
-    }
-    .qr-canvas-wrap {
-      width: 160px; height: 160px; background: white;
-      display: flex; align-items: center; justify-content: center;
-      border-radius: 12px; border: 1px solid var(--border);
-      overflow: hidden;
-    }
-    .qr-canvas-wrap canvas { width: 160px !important; height: 160px !important; }
-    .trace-key-big {
-      font-family: 'Space Mono', monospace; font-size: 13px;
-      color: var(--muted); text-align: center; letter-spacing: 0.04em;
-      background: #f8f7f6; border-radius: 8px; padding: 8px 14px;
-      border: 1px solid var(--border);
-    }
+    .qr-generated { background: white; border: 1.5px solid var(--border); border-radius: var(--radius); padding: 24px 20px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    .qr-img-wrap { width: 170px; height: 170px; background: white; border-radius: 12px; border: 1px solid var(--border); overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .qr-img-wrap img { width: 100%; height: 100%; }
+    .trace-key-big { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--muted); text-align: center; background: #f8f7f6; border-radius: 8px; padding: 8px 14px; border: 1px solid var(--border); word-break: break-all; }
+    .open-page-btn { width: 100%; background: #1a1208; color: white; border: none; border-radius: var(--radius); padding: 14px; font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; }
   `}</style>
 );
 
@@ -1055,12 +986,15 @@ const Fermentacion = ({ goBack, activeLot, showToast }) => {
 };
 
 // ─── INVENTARIO ────────────────────────────────────────────────────────────────
+// IMPORTANTE: reemplaza TU_PROJECT_REF con el ref de tu proyecto Supabase
+// Lo encuentras en: Supabase Dashboard → Settings → API → Project URL
+// Ej: https://abcdefghij.supabase.co → ref = abcdefghij
+const SUPABASE_EDGE_URL = "http://localhost:5173";
+
 const Inventario = ({ goBack, activeLot, profile, showToast }) => {
   const [inventory, setInventory] = useState(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
-
-  // Campos editables
   const [pesoNeto, setPesoNeto] = useState("");
   const [sacos, setSacos] = useState("");
   const [fechaEntrada, setFechaEntrada] = useState(new Date().toISOString().split("T")[0]);
@@ -1068,16 +1002,13 @@ const Inventario = ({ goBack, activeLot, profile, showToast }) => {
   const [condParedes, setCondParedes] = useState(false);
   const [condOlores, setCondOlores] = useState(false);
   const [traceKey, setTraceKey] = useState("");
+  const [pageUrl, setPageUrl] = useState("");
   const [qrUrl, setQrUrl] = useState("");
 
   useEffect(() => {
     const load = async () => {
       if (!activeLot) { setLoading(false); return; }
-      const { data } = await supabase
-        .from("inventory")
-        .select("*")
-        .eq("lot_id", activeLot.id)
-        .maybeSingle();
+      const { data } = await supabase.from("inventory").select("*").eq("lot_id", activeLot.id).maybeSingle();
       if (data) {
         setInventory(data);
         setPesoNeto(data.net_weight_kg || "");
@@ -1086,12 +1017,8 @@ const Inventario = ({ goBack, activeLot, profile, showToast }) => {
         setCondPallets(data.storage_on_pallets || false);
         setCondParedes(data.away_from_walls || false);
         setCondOlores(data.no_strong_odors || false);
-        if (data.traceability_key) {
-          setTraceKey(data.traceability_key);
-          generarQR(data.traceability_key);
-        }
+        if (data.traceability_key) actualizarQR(data.traceability_key);
       } else {
-        // Pre-llenar con datos del lote
         setPesoNeto(activeLot.weight_kg || "");
         setSacos(Math.ceil((activeLot.weight_kg || 0) / 50) || "");
       }
@@ -1100,68 +1027,52 @@ const Inventario = ({ goBack, activeLot, profile, showToast }) => {
     load();
   }, [activeLot]);
 
-  // Genera QR usando API pública (no requiere librerías)
-  const generarQR = (text) => {
-    const encoded = encodeURIComponent(text);
-    setQrUrl(`https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encoded}&color=1a1208&bgcolor=ffffff&margin=8`);
-  };
-
-  // Auto-calcular sacos cuando cambia el peso
   useEffect(() => {
-    if (pesoNeto && !inventory) {
-      setSacos(Math.ceil(parseFloat(pesoNeto) / 50) || "");
-    }
+    if (pesoNeto && !inventory) setSacos(Math.ceil(parseFloat(pesoNeto) / 50) || "");
   }, [pesoNeto]);
 
-  const handleFinalizar = async () => {
-    if (!activeLot) return;
-    if (!pesoNeto) { showToast("Ingresa el peso neto"); return; }
+  const actualizarQR = (key) => {
+    const url = `${SUPABASE_EDGE_URL}?key=${encodeURIComponent(key)}`;
+    setPageUrl(url);
+    setQrUrl(`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(url)}&color=1a1208&bgcolor=ffffff&margin=12`);
+    setTraceKey(key);
+  };
 
+  const handleFinalizar = async () => {
+    if (!activeLot || !pesoNeto) { showToast("Ingresa el peso neto"); return; }
     setSaving(true);
     const key = `${new Date().getFullYear()}-${activeLot.variety}-${profile?.producer_id || "URB"}-${activeLot.lot_code}`;
-    const { data, error } = await supabase
-      .from("inventory")
-      .upsert({
-        lot_id: activeLot.id,
-        net_weight_kg: parseFloat(pesoNeto),
-        bag_count: parseInt(sacos) || Math.ceil(parseFloat(pesoNeto) / 50),
-        entry_date: fechaEntrada,
-        storage_on_pallets: condPallets,
-        away_from_walls: condParedes,
-        no_strong_odors: condOlores,
-        traceability_key: key,
-        ready_to_sell: true,
-        registered_at: new Date().toISOString(),
-      }, { onConflict: "lot_id" })
-      .select()
-      .single();
-
+    const { data, error } = await supabase.from("inventory").upsert({
+      lot_id: activeLot.id,
+      net_weight_kg: parseFloat(pesoNeto),
+      bag_count: parseInt(sacos) || Math.ceil(parseFloat(pesoNeto) / 50),
+      entry_date: fechaEntrada,
+      storage_on_pallets: condPallets,
+      away_from_walls: condParedes,
+      no_strong_odors: condOlores,
+      traceability_key: key,
+      ready_to_sell: true,
+      registered_at: new Date().toISOString(),
+    }, { onConflict: "lot_id" }).select().single();
     setSaving(false);
     if (!error) {
       setInventory(data);
-      setTraceKey(key);
-      generarQR(key);
+      actualizarQR(key);
       await supabase.from("lots").update({ status: "almacenamiento" }).eq("id", activeLot.id);
-      showToast("✓ Lote registrado en almacén");
-    } else {
-      showToast("Error al guardar");
-    }
+      showToast("✓ QR de trazabilidad generado");
+    } else showToast("Error al guardar");
   };
 
-  if (loading) return (
-    <div className="loading-screen">
-      <div className="spinner" />
-      <span style={{ color: "var(--muted)", fontSize: 14 }}>Cargando...</span>
-    </div>
-  );
+  const abrirPagina = () => {
+    if (pageUrl) Browser.open({ url: pageUrl });
+  };
+
+  if (loading) return <div className="loading-screen"><div className="spinner" /></div>;
 
   const yaRegistrado = inventory?.ready_to_sell;
-  const condOk = condPallets && condParedes && condOlores;
 
   return (
     <div className="page-enter" style={{ display: "flex", flexDirection: "column", flex: 1, overflow: "hidden" }}>
-
-      {/* Header */}
       <div style={{ padding: "8px 20px 14px", borderBottom: "1px solid var(--border)", flexShrink: 0 }}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 6 }}>
           <button className="header-icon-btn" onClick={goBack}><Icon name="arrow_back_ios_new" /></button>
@@ -1187,7 +1098,7 @@ const Inventario = ({ goBack, activeLot, profile, showToast }) => {
           </div>
         ) : (
           <>
-            {/* Lote info */}
+            {/* Info lote */}
             <div style={{ background: "var(--primary-light)", border: "1.5px solid rgba(212,115,17,0.2)", borderRadius: "var(--radius)", padding: "12px 16px", marginBottom: 20, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div>
                 <div style={{ fontSize: 10, fontWeight: 700, color: "var(--primary)", textTransform: "uppercase", letterSpacing: "0.08em" }}>Lote en proceso</div>
@@ -1199,99 +1110,176 @@ const Inventario = ({ goBack, activeLot, profile, showToast }) => {
               </div>
             </div>
 
-            {/* ── Campos editables ── */}
             <div style={{ fontSize: 10, fontWeight: 800, color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 10 }}>Datos de entrada</div>
             <div className="space-y-sm mb-6">
-
-              {/* Peso neto */}
               <div className="inv-field-row">
                 <Icon name="scale" className="inv-field-icon" />
                 <div className="inv-field-info">
                   <div className="inv-field-label">Peso neto cacao seco (kg)</div>
-                  <input
-                    className="inv-input"
-                    type="number"
-                    placeholder="Ej: 420.5"
-                    value={pesoNeto}
-                    onChange={e => setPesoNeto(e.target.value)}
-                    disabled={yaRegistrado}
-                  />
+                  <input className="inv-input" type="number" placeholder="Ej: 420.5" value={pesoNeto} onChange={e => setPesoNeto(e.target.value)} disabled={yaRegistrado} />
                 </div>
               </div>
-
-              {/* Sacos */}
               <div className="inv-field-row">
                 <Icon name="inventory_2" className="inv-field-icon" />
                 <div className="inv-field-info">
                   <div className="inv-field-label">Número de sacos / costales</div>
-                  <input
-                    className="inv-input"
-                    type="number"
-                    placeholder="Auto-calculado"
-                    value={sacos}
-                    onChange={e => setSacos(e.target.value)}
-                    disabled={yaRegistrado}
-                  />
+                  <input className="inv-input" type="number" placeholder="Auto" value={sacos} onChange={e => setSacos(e.target.value)} disabled={yaRegistrado} />
                 </div>
-                <div style={{ fontSize: 10, color: "var(--muted)", fontWeight: 600, whiteSpace: "nowrap" }}>~50 kg/saco</div>
+                <span style={{ fontSize: 10, color: "var(--muted)", fontWeight: 600, whiteSpace: "nowrap" }}>~50 kg/saco</span>
               </div>
-
-              {/* Fecha entrada */}
               <div className="inv-field-row">
                 <Icon name="calendar_today" className="inv-field-icon" />
                 <div className="inv-field-info">
                   <div className="inv-field-label">Fecha de entrada al almacén</div>
-                  <input
-                    className="inv-input"
-                    type="date"
-                    value={fechaEntrada}
-                    onChange={e => setFechaEntrada(e.target.value)}
-                    disabled={yaRegistrado}
-                  />
+                  <input className="inv-input" type="date" value={fechaEntrada} onChange={e => setFechaEntrada(e.target.value)} disabled={yaRegistrado} />
                 </div>
               </div>
             </div>
 
-            {/* ── Condiciones ── */}
-            <div style={{ fontSize: 10, fontWeight: 800, color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 10 }}>
-              Condiciones de almacenamiento
-            </div>
+            <div style={{ fontSize: 10, fontWeight: 800, color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 10 }}>Condiciones de almacenamiento</div>
             <div className="space-y-sm mb-6">
               {[
                 { label: "Almacenado sobre pallets", val: condPallets, set: setCondPallets },
                 { label: "Alejado de las paredes (mín. 50 cm)", val: condParedes, set: setCondParedes },
                 { label: "Sin presencia de olores fuertes", val: condOlores, set: setCondOlores },
               ].map(({ label, val, set }) => (
-                <div
-                  key={label}
-                  className={`cond-check${val ? " checked" : ""}`}
-                  onClick={() => !yaRegistrado && set(!val)}
-                >
+                <div key={label} className={`cond-check${val ? " checked" : ""}`} onClick={() => !yaRegistrado && set(!val)}>
                   <div className="cond-box">{val ? "✓" : ""}</div>
                   <div className="cond-text">{label}</div>
                 </div>
               ))}
             </div>
 
-            {/* ── QR / Trazabilidad ── */}
+            {/* ── Carta de Trazabilidad: QR + código + link ── */}
             {traceKey ? (
-              <div className="qr-generated mb-6">
-                <div style={{ fontSize: 10, fontWeight: 800, color: "var(--primary)", textTransform: "uppercase", letterSpacing: "0.1em" }}>
-                  Clave de trazabilidad generada
+              <div style={{ marginBottom: 24 }}>
+
+                {/* Encabezado sección */}
+                <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 12 }}>
+                  <Icon name="qr_code_2" style={{ color: "var(--primary)", fontSize: 18 }} />
+                  <span style={{ fontSize: 11, fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)" }}>
+                    Carta de trazabilidad
+                  </span>
                 </div>
-                <div className="qr-canvas-wrap">
-                  {qrUrl && <img src={qrUrl} alt="QR" style={{ width: 160, height: 160 }} />}
-                </div>
-                <div className="trace-key-big">{traceKey}</div>
-                <div style={{ fontSize: 11, color: "var(--muted)" }}>
-                  Registrado: {inventory?.registered_at ? new Date(inventory.registered_at).toLocaleString("es-CO") : "—"}
+
+                {/* Card oscura con QR centrado */}
+                <div style={{
+                  background: "linear-gradient(160deg, #1a1208 0%, #2c1c09 100%)",
+                  borderRadius: 20, overflow: "hidden",
+                  boxShadow: "0 8px 32px rgba(0,0,0,0.2)",
+                }}>
+                  {/* Franja naranja top */}
+                  <div style={{ height: 4, background: "linear-gradient(90deg, #d47311, #f59e0b)" }} />
+
+                  <div style={{ padding: "22px 20px", display: "flex", flexDirection: "column", alignItems: "center", gap: 14 }}>
+
+                    {/* Label */}
+                    <div style={{ fontSize: 9, fontWeight: 800, color: "rgba(212,115,17,0.8)", textTransform: "uppercase", letterSpacing: "0.16em" }}>
+                      🍫 NodeBean · Urabá, Colombia
+                    </div>
+
+                    {/* QR grande */}
+                    <div style={{
+                      background: "white", borderRadius: 16, padding: 10,
+                      boxShadow: "0 4px 24px rgba(0,0,0,0.5)",
+                      border: "3px solid rgba(212,115,17,0.3)",
+                    }}>
+                      {qrUrl && <img src={qrUrl} alt="QR trazabilidad" style={{ width: 168, height: 168, display: "block", borderRadius: 8 }} />}
+                    </div>
+
+                    {/* Instrucción bajo el QR */}
+                    <div style={{ textAlign: "center", lineHeight: 1.6 }}>
+                      <div style={{ fontSize: 13, fontWeight: 700, color: "white" }}>
+                        Escanea para descargar la carta
+                      </div>
+                      <div style={{ fontSize: 11, color: "rgba(255,255,255,0.45)", marginTop: 2 }}>
+                        El PDF se descarga automáticamente
+                      </div>
+                    </div>
+
+                    {/* Separador */}
+                    <div style={{ width: "100%", height: 1, background: "rgba(255,255,255,0.08)" }} />
+
+                    {/* Código de lote copiable */}
+                    <div style={{ width: "100%" }}>
+                      <div style={{ fontSize: 9, fontWeight: 700, color: "rgba(255,255,255,0.35)", textTransform: "uppercase", letterSpacing: "0.12em", marginBottom: 6, textAlign: "center" }}>
+                        Código de lote
+                      </div>
+                      <div
+                        onClick={() => { navigator.clipboard?.writeText(traceKey); showToast("✓ Código copiado"); }}
+                        style={{
+                          background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)",
+                          borderRadius: 10, padding: "10px 14px",
+                          fontFamily: "'Space Mono', monospace", fontSize: 12,
+                          color: "rgba(255,255,255,0.85)", textAlign: "center",
+                          letterSpacing: "0.04em", wordBreak: "break-all",
+                          cursor: "pointer", userSelect: "all",
+                          display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+                        }}
+                      >
+                        {traceKey}
+                        <Icon name="content_copy" style={{ fontSize: 13, color: "rgba(255,255,255,0.35)", flexShrink: 0 }} />
+                      </div>
+                    </div>
+
+                    {/* Separador */}
+                    <div style={{ width: "100%", height: 1, background: "rgba(255,255,255,0.08)" }} />
+
+                    {/* Link de descarga */}
+                    <div style={{ width: "100%" }}>
+                      <div style={{ fontSize: 9, fontWeight: 700, color: "rgba(255,255,255,0.35)", textTransform: "uppercase", letterSpacing: "0.12em", marginBottom: 6, textAlign: "center" }}>
+                        Link de descarga
+                      </div>
+                      <div
+                        onClick={() => { navigator.clipboard?.writeText(pageUrl); showToast("✓ Link copiado"); }}
+                        style={{
+                          background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)",
+                          borderRadius: 10, padding: "10px 14px",
+                          fontFamily: "'Space Mono', monospace", fontSize: 10,
+                          color: "rgba(212,115,17,0.75)", textAlign: "center",
+                          letterSpacing: "0.02em", wordBreak: "break-all",
+                          cursor: "pointer",
+                          display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+                        }}
+                      >
+                        <Icon name="link" style={{ fontSize: 13, flexShrink: 0 }} />
+                        {pageUrl.replace("https://", "").slice(0, 52)}{pageUrl.length > 52 ? "…" : ""}
+                        <Icon name="content_copy" style={{ fontSize: 13, color: "rgba(255,255,255,0.25)", flexShrink: 0 }} />
+                      </div>
+                    </div>
+
+                    {/* Botón descarga */}
+                    <button
+                      onClick={abrirPagina}
+                      style={{
+                        width: "100%", background: "var(--primary)",
+                        color: "white", border: "none", borderRadius: 13,
+                        padding: "14px 16px", fontFamily: "inherit",
+                        fontSize: 14, fontWeight: 800, cursor: "pointer",
+                        display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+                        boxShadow: "0 4px 20px rgba(212,115,17,0.45)",
+                        marginTop: 2,
+                      }}
+                    >
+                      <Icon name="download" style={{ fontSize: 19 }} />
+                      Descargar carta PDF
+                    </button>
+
+                  </div>
                 </div>
               </div>
             ) : (
-              <div style={{ background: "#f8f7f6", border: "1.5px dashed var(--border)", borderRadius: "var(--radius)", padding: 20, textAlign: "center", marginBottom: 20 }}>
-                <div style={{ fontSize: 28, marginBottom: 8 }}>📋</div>
-                <div style={{ fontSize: 13, fontWeight: 600, color: "var(--muted)" }}>
-                  El QR y la clave de trazabilidad<br />se generan al finalizar el registro.
+              <div style={{
+                background: "#f8f7f6", border: "1.5px dashed rgba(0,0,0,0.1)",
+                borderRadius: "var(--radius)", padding: "24px 20px",
+                textAlign: "center", marginBottom: 20,
+              }}>
+                <div style={{ fontSize: 32, marginBottom: 10 }}>📋</div>
+                <div style={{ fontSize: 13, fontWeight: 700, color: "var(--text)", marginBottom: 4 }}>
+                  Aún no hay carta generada
+                </div>
+                <div style={{ fontSize: 12, color: "var(--muted)" }}>
+                  El QR y el link de descarga aparecen<br />después de finalizar el registro.
                 </div>
               </div>
             )}
@@ -1300,20 +1288,15 @@ const Inventario = ({ goBack, activeLot, profile, showToast }) => {
         <div style={{ height: 10 }} />
       </div>
 
-      {/* Footer */}
       {activeLot && (
         <div className="footer-actions">
-          <button
-            className="primary-btn"
-            onClick={handleFinalizar}
-            disabled={saving || yaRegistrado}
-          >
-            <Icon name={yaRegistrado ? "check_circle" : "cloud_upload"} />
-            {saving ? "Guardando..." : yaRegistrado ? "Registrado ✓" : "Finalizar & Generar QR"}
+          <button className="primary-btn" onClick={handleFinalizar} disabled={saving || yaRegistrado}>
+            <Icon name={yaRegistrado ? "check_circle" : "qr_code_2"} />
+            {saving ? "Generando..." : yaRegistrado ? "Carta generada ✓" : "Finalizar & Generar QR"}
           </button>
           {yaRegistrado && (
-            <button className="secondary-btn" onClick={() => window.open(qrUrl, "_blank")}>
-              <Icon name="share" /> Compartir comprobante
+            <button className="secondary-btn" onClick={() => { if (pageUrl) { try { navigator.share({ title: `Lote ${activeLot.lot_code}`, text: "Carta de trazabilidad de cacao · Urabá", url: pageUrl }); } catch { abrirPagina(); } } }}>
+              <Icon name="share" /> Compartir link de descarga
             </button>
           )}
           <div style={{ height: 4 }} />
@@ -1340,8 +1323,7 @@ const Parcelas = ({ userId, showToast }) => {
     setLoading(false);
   };
   useEffect(() => { cargar(); }, [userId]);
-
-  const resetForm = () => { setNombre(""); setHectareas(1); setArboles(100); };
+  const reset = () => { setNombre(""); setHectareas(1); setArboles(100); };
 
   const handleGuardar = async () => {
     if (!nombre.trim()) return;
@@ -1350,20 +1332,20 @@ const Parcelas = ({ userId, showToast }) => {
       .insert({ farmer_id: userId, nombre: nombre.trim(), hectareas: parseFloat(hectareas), num_arboles: parseInt(arboles) })
       .select().single();
     setSaving(false);
-    if (!error) { setParcelas(prev => [data, ...prev]); showToast("✓ Parcela registrada"); setShowModal(false); resetForm(); }
+    if (!error) { setParcelas(p => [data, ...p]); showToast("✓ Parcela registrada"); setShowModal(false); reset(); }
     else showToast("Error al guardar");
   };
 
   const handleEliminar = async (id) => {
     await supabase.from("parcelas").delete().eq("id", id);
-    setParcelas(prev => prev.filter(p => p.id !== id));
+    setParcelas(p => p.filter(x => x.id !== id));
     showToast("Parcela eliminada");
   };
 
-  const totalHa = parcelas.reduce((s, p) => s + (p.hectareas || 0), 0);
-  const totalArboles = parcelas.reduce((s, p) => s + (p.num_arboles || 0), 0);
   const sliderHaPct = (((hectareas - 0.5) / 49.5) * 100).toFixed(1);
   const sliderArPct = (((arboles - 10) / 1990) * 100).toFixed(1);
+  const totalHa = parcelas.reduce((s, p) => s + (p.hectareas || 0), 0);
+  const totalAr = parcelas.reduce((s, p) => s + (p.num_arboles || 0), 0);
 
   return (
     <div className="page-enter" style={{ display: "flex", flexDirection: "column", flex: 1, overflow: "hidden" }}>
@@ -1372,7 +1354,7 @@ const Parcelas = ({ userId, showToast }) => {
           <div style={{ fontWeight: 800, fontSize: 17 }}>Mis Parcelas</div>
           <div style={{ fontSize: 11, color: "var(--muted)", marginTop: 2 }}>Terrenos de tu finca</div>
         </div>
-        <button className="primary-btn" style={{ width: "auto", padding: "10px 18px", fontSize: 13, borderRadius: 12 }} onClick={() => setShowModal(true)}>
+        <button className="primary-btn" style={{ width: "auto", padding: "10px 16px", fontSize: 13, borderRadius: 12 }} onClick={() => setShowModal(true)}>
           <Icon name="add" /> Nueva
         </button>
       </div>
@@ -1407,7 +1389,7 @@ const Parcelas = ({ userId, showToast }) => {
             <div className="parcelas-summary">
               <div><div className="summary-val">{parcelas.length}</div><div className="summary-lbl">Parcelas</div></div>
               <div><div className="summary-val">{totalHa.toFixed(1)}</div><div className="summary-lbl">Hectáreas</div></div>
-              <div><div className="summary-val">{totalArboles >= 1000 ? (totalArboles / 1000).toFixed(1) + "k" : totalArboles}</div><div className="summary-lbl">Árboles</div></div>
+              <div><div className="summary-val">{totalAr >= 1000 ? (totalAr/1000).toFixed(1)+"k" : totalAr}</div><div className="summary-lbl">Árboles</div></div>
             </div>
           </>
         )}
@@ -1415,7 +1397,7 @@ const Parcelas = ({ userId, showToast }) => {
       </div>
 
       {showModal && (
-        <div className="modal-backdrop" onClick={e => { if (e.target === e.currentTarget) { setShowModal(false); resetForm(); } }}>
+        <div className="modal-backdrop" onClick={e => { if (e.target === e.currentTarget) { setShowModal(false); reset(); } }}>
           <div className="modal-sheet">
             <div className="modal-handle" />
             <div className="modal-title">Nueva Parcela</div>
@@ -1445,7 +1427,7 @@ const Parcelas = ({ userId, showToast }) => {
             <button className="primary-btn" onClick={handleGuardar} disabled={saving || !nombre.trim()}>
               {saving ? "Guardando..." : "Registrar Parcela"} <Icon name="check" style={{ fontSize: 16 }} />
             </button>
-            <button className="secondary-btn" style={{ marginTop: 10 }} onClick={() => { setShowModal(false); resetForm(); }}>Cancelar</button>
+            <button className="secondary-btn" style={{ marginTop: 10 }} onClick={() => { setShowModal(false); reset(); }}>Cancelar</button>
           </div>
         </div>
       )}
@@ -1454,8 +1436,16 @@ const Parcelas = ({ userId, showToast }) => {
 };
 
 // ─── REGISTRO ──────────────────────────────────────────────────────────────────
-const Registro = ({ goBack, userId, showToast, onLotCreated, navigate }) => {
+const Registro = ({ goBack, navigate, userId, showToast, onLotCreated }) => {
   const [variety, setVariety] = useState("CCN51");
+  const [varieties, setVarieties] = useState([
+    { key: "CCN51", type: "HÍBRIDO" },
+    { key: "ICS95", type: "CLON" },
+    { key: "Mezclado", type: "OTRO" },
+  ]);
+  const [showAddVariety, setShowAddVariety] = useState(false);
+  const [newVarietyName, setNewVarietyName] = useState("");
+  const [newVarietyType, setNewVarietyType] = useState("CLON");
   const [check1, setCheck1] = useState(true);
   const [check2, setCheck2] = useState(false);
   const [harvestDate, setHarvestDate] = useState(new Date().toISOString().split("T")[0]);
@@ -1466,20 +1456,8 @@ const Registro = ({ goBack, userId, showToast, onLotCreated, navigate }) => {
   const [parcelas, setParcelas] = useState([]);
   const [loadingParcelas, setLoadingParcelas] = useState(true);
 
-  // Variedades dinámicas
-  const [varieties, setVarieties] = useState([
-    { key: "CCN51", type: "HÍBRIDO" },
-    { key: "ICS95", type: "CLON" },
-    { key: "Mezclado", type: "OTRO" },
-  ]);
-  const [showAddVariety, setShowAddVariety] = useState(false);
-  const [newVarietyName, setNewVarietyName] = useState("");
-  const [newVarietyType, setNewVarietyType] = useState("CLON");
-
   useEffect(() => {
-    setLoadingParcelas(true);
-    supabase.from("parcelas").select("id,nombre,hectareas,num_arboles")
-      .eq("farmer_id", userId).order("created_at", { ascending: false })
+    supabase.from("parcelas").select("id,nombre,hectareas,num_arboles").eq("farmer_id", userId).order("created_at", { ascending: false })
       .then(({ data }) => {
         const lista = data || [];
         setParcelas(lista);
@@ -1489,61 +1467,32 @@ const Registro = ({ goBack, userId, showToast, onLotCreated, navigate }) => {
   }, [userId]);
 
   const handleAddVariety = () => {
-    const nombre = newVarietyName.trim().toUpperCase();
-    if (!nombre) return;
-    if (varieties.find(v => v.key === nombre)) {
-      showToast("Esa variedad ya existe");
-      return;
-    }
-    const nueva = { key: nombre, type: newVarietyType };
-    setVarieties(prev => [...prev, nueva]);
-    setVariety(nombre);
+    const n = newVarietyName.trim().toUpperCase();
+    if (!n || varieties.find(v => v.key === n)) { showToast("Esa variedad ya existe"); return; }
+    setVarieties(prev => [...prev, { key: n, type: newVarietyType }]);
+    setVariety(n);
     setNewVarietyName("");
     setShowAddVariety(false);
-    showToast(`✓ Variedad "${nombre}" agregada`);
+    showToast(`✓ Variedad "${n}" agregada`);
   };
 
   const parcelaSeleccionada = parcelas.find(p => p.id === parcelId);
 
   const handleSubmit = async () => {
-    if (!harvestDate || !weightKg) {
-      setError("Por favor completa la fecha y el peso de la cosecha.");
-      return;
-    }
-    if (!parcelId) {
-      setError("Debes seleccionar una parcela.");
-      return;
-    }
-    setSaving(true);
-    setError(null);
+    if (!harvestDate || !weightKg) { setError("Completa la fecha y el peso."); return; }
+    if (!parcelId) { setError("Selecciona una parcela."); return; }
+    setSaving(true); setError(null);
     const lotCode = `${new Date().getFullYear()}-${Math.floor(Math.random() * 900 + 100)}`;
-    const { data, error: dbError } = await supabase
-      .from("lots")
-      .insert({
-        farmer_id: userId,
-        lot_code: lotCode,
-        variety,
-        parcel_name: parcelaSeleccionada?.nombre || "",
-        parcel_id: parcelId,
-        harvest_date: harvestDate,
-        weight_kg: parseFloat(weightKg),
-        status: "fermentacion",
-        quality_ripe: check1,
-        quality_cut: check2,
-      })
-      .select()
-      .single();
+    const { data, error: dbError } = await supabase.from("lots").insert({
+      farmer_id: userId, lot_code: lotCode, variety,
+      parcel_name: parcelaSeleccionada?.nombre || "", parcel_id: parcelId,
+      harvest_date: harvestDate, weight_kg: parseFloat(weightKg),
+      status: "fermentacion", quality_ripe: check1, quality_cut: check2,
+    }).select().single();
     setSaving(false);
-    if (dbError) {
-      setError("Error al guardar el lote: " + dbError.message);
-    } else {
-      showToast(`✓ Lote #${data.lot_code} registrado`);
-      onLotCreated(data);
-      goBack();
-    }
+    if (dbError) setError("Error: " + dbError.message);
+    else { showToast(`✓ Lote #${data.lot_code} registrado`); onLotCreated(data); goBack(); }
   };
-
-  const tiposVariedad = ["CLON", "HÍBRIDO", "NATIVO", "OTRO"];
 
   return (
     <div className="page-enter" style={{ display: "flex", flexDirection: "column", flex: 1, overflow: "hidden" }}>
@@ -1552,25 +1501,19 @@ const Registro = ({ goBack, userId, showToast, onLotCreated, navigate }) => {
         <div style={{ fontWeight: 800, fontSize: 16 }}>Registrar Cosecha</div>
         <div style={{ width: 40 }} />
       </div>
-
       <div className="px" style={{ marginBottom: 16 }}>
         <div className="stepper">
           <div className="step-bar done" /><div className="step-bar" /><div className="step-bar" /><div className="step-bar" />
         </div>
         <div className="step-label">Paso 1: Recolección de la cosecha</div>
       </div>
-
       <div className="page-scroll px">
         <div className="img-card mb-6" style={{ height: 120 }}>
           <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBauwPrRfvqyp-MFsQfoPRhFL7KrlYRavesJJcKPmF1R8m-IQm2sx54TKZyG_Of4HX5aaHmUo5U87eTaz11e6fYlhs-xV3ZZKHcsZA1loxPjoT3cKRrcTNS2VGyUFgF1eh-JdIOEwaOM4-mKv98q3Gk0ApzDmbM1evYuW3jw2xYEfEavkN8to8YHd4xqM1e9t3P0ZPJ2tO5XIXsSpEYo4CWupY9fHev5_cn3mWN5Ek8Ob-VbSzPYCUg8Pisob8TdhWqXyXrX8ID40HJ" alt="Cocoa pod" />
           <div className="img-overlay"><span>Trazabilidad de la Región de Urabá</span></div>
         </div>
-
         {error && <div className="login-error" style={{ marginBottom: 16 }}>{error}</div>}
-
         <div className="space-y mb-6">
-
-          {/* Fecha */}
           <div>
             <div className="field-label">Fecha de cosecha</div>
             <div className="field-wrap">
@@ -1578,8 +1521,6 @@ const Registro = ({ goBack, userId, showToast, onLotCreated, navigate }) => {
               <Icon name="calendar_today" className="field-icon" />
             </div>
           </div>
-
-          {/* Peso */}
           <div>
             <div className="field-label">Peso aproximado (kg)</div>
             <div className="field-wrap">
@@ -1587,19 +1528,14 @@ const Registro = ({ goBack, userId, showToast, onLotCreated, navigate }) => {
               <Icon name="scale" className="field-icon" />
             </div>
           </div>
-
-          {/* Parcela */}
           <div>
             <div className="field-label">Parcela de origen</div>
             {loadingParcelas ? (
               <div style={{ padding: "14px 0" }}><div className="spinner" style={{ width: 24, height: 24, margin: "0 auto" }} /></div>
             ) : parcelas.length === 0 ? (
-              <div onClick={() => navigate && navigate("parcelas")} style={{ background: "#fef3e8", border: "1.5px dashed rgba(212,115,17,0.4)", borderRadius: "var(--radius-sm)", padding: "16px", fontSize: 13, color: "var(--primary)", fontWeight: 600, display: "flex", alignItems: "center", gap: 10, cursor: "pointer" }}>
+              <div onClick={() => navigate("parcelas")} style={{ background: "#fef3e8", border: "1.5px dashed rgba(212,115,17,0.4)", borderRadius: "var(--radius-sm)", padding: "16px", fontSize: 13, color: "var(--primary)", fontWeight: 600, display: "flex", alignItems: "center", gap: 10, cursor: "pointer" }}>
                 <Icon name="add_circle_outline" style={{ fontSize: 20 }} />
-                <div>
-                  <div>No tienes parcelas registradas</div>
-                  <div style={{ fontSize: 11, fontWeight: 500, marginTop: 2 }}>Toca aquí para agregar tus terrenos →</div>
-                </div>
+                <div><div>No tienes parcelas registradas</div><div style={{ fontSize: 11, fontWeight: 500, marginTop: 2 }}>Toca aquí para agregar tus terrenos →</div></div>
               </div>
             ) : (
               <>
@@ -1618,26 +1554,16 @@ const Registro = ({ goBack, userId, showToast, onLotCreated, navigate }) => {
               </>
             )}
           </div>
-
-          {/* Variedad con botón + */}
           <div>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 8 }}>
               <div className="field-label" style={{ margin: 0 }}>Variedad de cacao</div>
-              <button
-                onClick={() => setShowAddVariety(true)}
-                style={{ background: "var(--primary-light)", border: "none", borderRadius: 8, padding: "5px 12px", fontSize: 12, fontWeight: 700, color: "var(--primary)", cursor: "pointer", display: "flex", alignItems: "center", gap: 4 }}
-              >
+              <button onClick={() => setShowAddVariety(true)} style={{ background: "var(--primary-light)", border: "none", borderRadius: 8, padding: "5px 12px", fontSize: 12, fontWeight: 700, color: "var(--primary)", cursor: "pointer", display: "flex", alignItems: "center", gap: 4 }}>
                 <Icon name="add" style={{ fontSize: 14 }} /> Nueva
               </button>
             </div>
             <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
               {varieties.map(v => (
-                <button
-                  key={v.key}
-                  className={`variety-btn${variety === v.key ? " selected" : ""}`}
-                  style={{ flex: "1 1 80px", minWidth: 80 }}
-                  onClick={() => setVariety(v.key)}
-                >
+                <button key={v.key} className={`variety-btn${variety === v.key ? " selected" : ""}`} style={{ flex: "1 1 80px", minWidth: 80 }} onClick={() => setVariety(v.key)}>
                   <span className="variety-type">{v.type}</span>
                   <span className="variety-name">{v.key}</span>
                 </button>
@@ -1645,8 +1571,6 @@ const Registro = ({ goBack, userId, showToast, onLotCreated, navigate }) => {
             </div>
           </div>
         </div>
-
-        {/* Control calidad */}
         <div className="mb-6">
           <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 10 }}>
             <Icon name="verified" style={{ color: "var(--primary)", fontSize: 16 }} />
@@ -1665,7 +1589,6 @@ const Registro = ({ goBack, userId, showToast, onLotCreated, navigate }) => {
         </div>
         <div style={{ height: 100 }} />
       </div>
-
       <div className="footer-actions">
         <button className="primary-btn" onClick={handleSubmit} disabled={saving || parcelas.length === 0}>
           {saving ? "Guardando..." : "Registrar & Continuar"} <Icon name="arrow_forward" style={{ fontSize: 16 }} />
@@ -1673,59 +1596,175 @@ const Registro = ({ goBack, userId, showToast, onLotCreated, navigate }) => {
         <div style={{ height: 4 }} />
       </div>
 
-      {/* Modal agregar variedad */}
       {showAddVariety && (
         <div className="modal-backdrop" onClick={e => { if (e.target === e.currentTarget) setShowAddVariety(false); }}>
           <div className="modal-sheet">
             <div className="modal-handle" />
             <div className="modal-title">Nueva Variedad</div>
-
             <div className="space-y mb-6">
               <div>
                 <div className="field-label">Nombre de la variedad</div>
                 <div className="field-wrap">
-                  <input
-                    className="field-input"
-                    placeholder='Ej: TSH565, ICS1, Amelonado...'
-                    value={newVarietyName}
-                    onChange={e => setNewVarietyName(e.target.value.toUpperCase())}
-                    autoFocus
-                  />
+                  <input className="field-input" placeholder="Ej: TSH565, ICS1, Amelonado..." value={newVarietyName} onChange={e => setNewVarietyName(e.target.value.toUpperCase())} autoFocus />
                   <Icon name="eco" className="field-icon" />
                 </div>
               </div>
               <div>
                 <div className="field-label">Tipo</div>
                 <div style={{ display: "flex", gap: 8 }}>
-                  {tiposVariedad.map(t => (
-                    <button
-                      key={t}
-                      onClick={() => setNewVarietyType(t)}
-                      style={{
-                        flex: 1, padding: "10px 4px", borderRadius: "var(--radius-sm)",
-                        border: `1.5px solid ${newVarietyType === t ? "var(--primary)" : "var(--border)"}`,
-                        background: newVarietyType === t ? "var(--primary-light)" : "white",
-                        fontFamily: "inherit", fontSize: 11, fontWeight: 700,
-                        color: newVarietyType === t ? "var(--primary)" : "var(--muted)",
-                        cursor: "pointer"
-                      }}
-                    >
+                  {["CLON", "HÍBRIDO", "NATIVO", "OTRO"].map(t => (
+                    <button key={t} onClick={() => setNewVarietyType(t)} style={{ flex: 1, padding: "10px 4px", borderRadius: "var(--radius-sm)", border: `1.5px solid ${newVarietyType === t ? "var(--primary)" : "var(--border)"}`, background: newVarietyType === t ? "var(--primary-light)" : "white", fontFamily: "inherit", fontSize: 11, fontWeight: 700, color: newVarietyType === t ? "var(--primary)" : "var(--muted)", cursor: "pointer" }}>
                       {t}
                     </button>
                   ))}
                 </div>
               </div>
             </div>
-
             <button className="primary-btn" onClick={handleAddVariety} disabled={!newVarietyName.trim()}>
               Agregar variedad <Icon name="check" style={{ fontSize: 16 }} />
             </button>
-            <button className="secondary-btn" style={{ marginTop: 10 }} onClick={() => setShowAddVariety(false)}>
-              Cancelar
-            </button>
+            <button className="secondary-btn" style={{ marginTop: 10 }} onClick={() => setShowAddVariety(false)}>Cancelar</button>
           </div>
         </div>
       )}
+    </div>
+  );
+};
+
+// ─── TRAZABILIDAD PÚBLICA ──────────────────────────────────────────────────────
+const Trazabilidad = () => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const key = new URLSearchParams(window.location.search).get("key");
+
+  useEffect(() => {
+    if (!key) { setError("Falta la clave."); setLoading(false); return; }
+    supabase.from("inventory").select("*, lots(*, profiles(*), parcelas(*))")
+      .eq("traceability_key", key).maybeSingle()
+      .then(({ data: inv, error: err }) => {
+        if (err || !inv) setError("No se encontró información para esta clave.");
+        else setData(inv);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) return (
+    <div style={{display:"flex",alignItems:"center",justifyContent:"center",minHeight:"100dvh",flexDirection:"column",gap:16,background:"#f0ede8"}}>
+      <div style={{width:44,height:44,border:"3px solid rgba(212,115,17,.15)",borderTopColor:"#d47311",borderRadius:"50%",animation:"spin .8s linear infinite"}} />
+      <style>{`@keyframes spin{to{transform:rotate(360deg)}}`}</style>
+      <span style={{color:"#7a6f63",fontSize:14,fontWeight:600,fontFamily:"system-ui"}}>Cargando carta...</span>
+    </div>
+  );
+
+  if (error) return (
+    <div style={{display:"flex",alignItems:"center",justifyContent:"center",minHeight:"100dvh",flexDirection:"column",gap:12,background:"#f8f7f6",textAlign:"center",padding:32,fontFamily:"system-ui"}}>
+      <div style={{fontSize:56}}>🔍</div>
+      <div style={{fontSize:20,fontWeight:800,color:"#1a1208"}}>Lote no encontrado</div>
+      <div style={{fontSize:14,color:"#7a6f63",maxWidth:300,lineHeight:1.6}}>{error}</div>
+    </div>
+  );
+
+  const lot = data.lots || {};
+  const profile = lot.profiles || {};
+  const parcela = lot.parcelas || {};
+  const fmt = (d) => d ? new Date(d).toLocaleDateString("es-CO", {day:"2-digit",month:"long",year:"numeric"}) : "---";
+  const chk = (v) => v ? "✓ Verificado" : "✗ No verificado";
+  const regDate = data.registered_at ? new Date(data.registered_at).toLocaleString("es-CO") : "---";
+  const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(key)}&color=1a1208&bgcolor=ffffff&margin=10`;
+
+  const S = {
+    wrap:{maxWidth:460,margin:"0 auto",padding:"20px 20px 40px",fontFamily:"'Plus Jakarta Sans',system-ui,sans-serif"},
+    header:{background:"linear-gradient(135deg,#1a1208,#2c1c09)",borderRadius:20,padding:"28px 24px 22px",marginBottom:16,color:"white",position:"relative",overflow:"hidden"},
+    hi:{paddingLeft:14},
+    eye:{fontSize:10,fontWeight:700,letterSpacing:".14em",textTransform:"uppercase",color:"rgba(212,115,17,.8)",marginBottom:6},
+    lotnum:{fontSize:28,fontWeight:800,marginBottom:6},
+    badge:{display:"inline-flex",alignItems:"center",gap:5,background:"#16a34a",color:"white",borderRadius:999,padding:"4px 12px",fontSize:11,fontWeight:700,marginBottom:10},
+    regd:{fontSize:11,color:"rgba(255,255,255,.4)"},
+    btn:{width:"100%",background:"#d47311",color:"white",border:"none",borderRadius:14,padding:15,fontSize:15,fontWeight:800,cursor:"pointer",marginBottom:16,display:"flex",alignItems:"center",justifyContent:"center",gap:8,boxShadow:"0 6px 20px rgba(212,115,17,.35)",fontFamily:"inherit"},
+    qrCard:{background:"white",borderRadius:16,padding:20,textAlign:"center",marginBottom:16,border:"1px solid #ede9e4"},
+    qrLbl:{fontSize:10,fontWeight:700,color:"#7a6f63",letterSpacing:".1em",textTransform:"uppercase",marginBottom:12},
+    keyCode:{fontFamily:"monospace",fontSize:11,background:"#f8f7f6",borderRadius:8,padding:"8px 12px",color:"#1a1208",wordBreak:"break-all",marginTop:10,border:"1px solid #ede9e4"},
+    secTitle:{fontSize:10,fontWeight:800,letterSpacing:".12em",textTransform:"uppercase",color:"#d47311",marginBottom:8,display:"flex",alignItems:"center",gap:8},
+    table:{width:"100%",borderCollapse:"collapse",background:"white",borderRadius:12,overflow:"hidden",border:"1px solid #ede9e4",marginBottom:16},
+    tdL:{color:"#7a6f63",padding:"10px 14px",fontSize:13,borderBottom:"1px solid #f0ede8"},
+    tdR:{fontWeight:700,padding:"10px 14px",fontSize:13,borderBottom:"1px solid #f0ede8",textAlign:"right"},
+    footer:{textAlign:"center",fontSize:11,color:"#7a6f63",padding:"20px 0 4px",lineHeight:1.7},
+  };
+
+  const Sec = ({title, rows}) => (
+    <div style={{marginBottom:16}}>
+      <div style={S.secTitle}>
+        <div style={{height:1,width:14,background:"#d47311"}}/>
+        {title}
+        <div style={{flex:1,height:1,background:"#ede9e4"}}/>
+      </div>
+      <table style={S.table}><tbody>
+        {rows.map(([lbl,val,ok],i)=>(
+          <tr key={lbl} style={i%2===0?{background:"#faf9f7"}:{}}>
+            <td style={S.tdL}>{lbl}</td>
+            <td style={{...S.tdR, color: ok===true?"#16a34a":ok===false?"#dc2626":"#1a1208"}}>{val}</td>
+          </tr>
+        ))}
+      </tbody></table>
+    </div>
+  );
+
+  return (
+    <div style={{background:"#f0ede8",minHeight:"100dvh"}}>
+      <style>{`@media print{.no-print{display:none!important}body{background:white}}`}</style>
+      <div style={S.wrap}>
+        <div style={S.header}>
+          <div style={{position:"absolute",top:0,left:0,width:5,height:"100%",background:"linear-gradient(180deg,#d47311,#f59e0b)"}}/>
+          <div style={S.hi}>
+            <div style={S.eye}>🍫 NodeBean · Urabá, Colombia</div>
+            <div style={S.lotnum}>Lote #{lot.lot_code||"---"}</div>
+            <div style={S.badge}>✓ Verificado y Registrado</div>
+            <div style={S.regd}>Registrado: {regDate}</div>
+          </div>
+        </div>
+
+        <button className="no-print" style={S.btn} onClick={()=>window.print()}>
+          🖨️ Guardar como PDF / Imprimir
+        </button>
+
+        <div style={S.qrCard}>
+          <div style={S.qrLbl}>Código QR de trazabilidad</div>
+          <img src={qrUrl} width={160} height={160} alt="QR" style={{borderRadius:10,border:"1px solid #f0ede8"}}/>
+          <div style={S.keyCode}>{key}</div>
+        </div>
+
+        <Sec title="Productor" rows={[
+          ["Nombre completo", profile.full_name||"---"],
+          ["ID Productor", profile.producer_id||"---"],
+          ["Región", "Urabá, Antioquia — Colombia"],
+        ]}/>
+        <Sec title="Parcela de origen" rows={[
+          ["Nombre / Código", parcela.nombre||lot.parcel_name||"---"],
+          ["Superficie", parcela.hectareas ? parcela.hectareas+" ha" : "---"],
+          ["Árboles de cacao", parcela.num_arboles ? String(parcela.num_arboles) : "---"],
+          ["Variedad", lot.variety||"---"],
+        ]}/>
+        <Sec title="Proceso cronológico" rows={[
+          ["Cosecha", fmt(lot.harvest_date)],
+          ["Fermentación", "6 días desde la cosecha"],
+          ["Entrada al almacén", fmt(data.entry_date||data.registered_at)],
+        ]}/>
+        <Sec title="Inventario final" rows={[
+          ["Peso neto cacao seco", data.net_weight_kg ? data.net_weight_kg+" kg" : "---"],
+          ["Sacos de fique", data.bag_count ? data.bag_count+" costales" : "---"],
+        ]}/>
+        <Sec title="Condiciones de almacenamiento" rows={[
+          ["Almacenado sobre pallets", chk(data.storage_on_pallets), data.storage_on_pallets],
+          ["Alejado de paredes (mín. 50 cm)", chk(data.away_from_walls), data.away_from_walls],
+          ["Sin presencia de olores fuertes", chk(data.no_strong_odors), data.no_strong_odors],
+        ]}/>
+
+        <div style={S.footer}>
+          Documento generado por NodeBean · Sistema de Trazabilidad Digital<br/>
+          {new Date().toLocaleDateString("es-CO",{day:"2-digit",month:"long",year:"numeric"})}
+        </div>
+      </div>
     </div>
   );
 };
@@ -1818,6 +1857,9 @@ export default function App() {
   const navigate = (p) => setPage(p);
   const goBack = () => setPage("panel");
   const activeLot = lots.find(l => l.status === "fermentacion") || lots[0];
+
+  // Carta pública de trazabilidad (acceso sin login)
+  if (window.location.search.includes("key=")) return <Trazabilidad />;
 
   // Pantalla de carga inicial
   if (session === undefined) {
